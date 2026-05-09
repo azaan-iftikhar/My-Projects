@@ -1,0 +1,27 @@
+{
+  "logoBase64": null,
+  "invoiceNumber": "1",
+  "invoiceDate": "2026-05-09",
+  "dueDate": "2026-05-23",
+  "clientName": "",
+  "clientAddress": "",
+  "currencySymbol": "$",
+  "notes": "",
+  "terms": "",
+  "taxRate": "04",
+  "amountPaid": "0",
+  "items": [
+    {
+      "id": "9hk599y",
+      "description": "toy car",
+      "quantity": 12,
+      "rate": 4
+    },
+    {
+      "id": "qvp74xy",
+      "description": "",
+      "quantity": 1,
+      "rate": 0
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clean Invoice Generator</title>
+  <meta name="description" content="Generate and print clean, professional invoices easily.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Notification Banner -->
+  <div id="notificationBanner" class="notification hidden no-print">
+    Invoice state updated
+  </div>
+
+  <div id="validationError" class="validation-error hidden no-print">
+    Please fill in Client Name and at least 1 item description before previewing.
+  </div>
+
+  <div class="app-wrapper">
+    <main class="invoice-container">
+      
+      <!-- Header Area -->
+      <header class="invoice-header">
+        <!-- Left: Logo & From -->
+        <div class="header-left">
+          <div class="logo-wrapper">
+            <div id="companyLogo" class="company-logo">
+              <!-- Upload Button shown when no logo -->
+              <label for="logoUpload" class="logo-upload-btn no-print" id="logoUploadLabel">Upload Logo</label>
+              <input type="file" id="logoUpload" accept="image/*" class="hidden">
+              <img id="logoImg" src="" alt="Company Logo" class="hidden" style="max-width: 150px; max-height: 80px; object-fit: contain;">
+              <button type="button" id="removeLogoBtn" class="no-print hidden text-danger" style="margin-top: 5px; background:none; border:none; cursor:pointer; font-size: 12px;">Remove Logo</button>
+            </div>
+          </div>
+          <div class="from-details mt-20">
+            <!-- Hardcoded text as requested -->
+            <input type="text" id="fromName" value="PrimeCare" class="plain-input strong-text" readonly>
+            <textarea id="fromAddress1" class="plain-input address-textarea" rows="2" readonly>California</textarea>
+          </div>
+        </div>
+
+        <!-- Right: Title & Meta -->
+        <div class="header-right">
+          <h1 class="invoice-title">INVOICE</h1>
+          <div class="meta-grid mt-20">
+            <label>Invoice #</label>
+            <input type="text" id="invoiceNumber" value="1" class="plain-input text-right">
+            
+            <label>Date</label>
+            <input type="date" id="invoiceDate" class="plain-input text-right">
+            
+            <label>Due Date</label>
+            <input type="date" id="dueDate" class="plain-input text-right">
+
+            <label class="no-print">Currency</label>
+            <input type="text" id="currencySymbol" value="$" class="plain-input text-right no-print" maxlength="3">
+          </div>
+        </div>
+      </header>
+
+      <!-- Bill To Section -->
+      <section class="bill-to-section">
+        <label class="section-label">Billed To</label>
+        <input type="text" id="clientName" placeholder="Client Name" required class="plain-input strong-text required-field">
+        <textarea id="clientAddress" placeholder="Client Address" class="plain-input address-textarea" rows="2"></textarea>
+      </section>
+
+      <!-- Items Section -->
+      <section class="items-section">
+        <table class="items-table">
+          <thead>
+            <tr>
+              <th style="width: 55%">Description</th>
+              <th style="width: 15%" class="text-right">Qty</th>
+              <th style="width: 15%" class="text-right">Rate</th>
+              <th style="width: 15%" class="text-right">Amount</th>
+            </tr>
+          </thead>
+          <tbody id="itemsBody">
+            <!-- JS generates rows -->
+          </tbody>
+        </table>
+        <button type="button" id="addItemBtn" class="btn-add-item no-print">+ Add Item</button>
+      </section>
+
+      <!-- Bottom Layout: Notes & Totals -->
+      <div class="bottom-layout">
+        <div class="notes-section">
+          <label class="section-label">Notes</label>
+          <textarea id="notesInput" placeholder="Thank you for your business." rows="3" class="plain-input"></textarea>
+          
+          <label class="section-label mt-20">Terms</label>
+          <textarea id="termsInput" placeholder="Please pay within the due date." rows="2" class="plain-input"></textarea>
+        </div>
+
+        <div class="totals-section">
+          <div class="total-row">
+            <span>Subtotal</span>
+            <span id="subtotalDisplay" class="monetary-value">$0.00</span>
+          </div>
+          <div class="total-row tax-row">
+            <span class="no-print">Tax %</span>
+            <span class="preview-only hidden">Tax</span>
+            <div class="tax-inputs no-print">
+              <input type="number" id="taxRate" value="0" min="0" step="0.1" class="plain-input text-right" style="width: 50px;">
+            </div>
+            <span id="taxAmountDisplay" class="monetary-value no-print">$0.00</span>
+            <span id="taxAmountDisplayPreview" class="monetary-value preview-only hidden">$0.00</span>
+          </div>
+          <div class="total-row amount-paid-row">
+            <span>Amount Paid</span>
+            <div class="paid-input-group no-print">
+              <span class="currency-label">$</span>
+              <input type="number" id="amountPaid" value="0" min="0" step="0.01" class="plain-input text-right">
+            </div>
+            <span id="amountPaidPreview" class="monetary-value preview-only hidden">$0.00</span>
+          </div>
+          <div class="total-row balance-due-row">
+            <span>Balance Due</span>
+            <span id="balanceDueDisplay" class="monetary-value highlight-amount">$0.00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Red Footer Block -->
+      <div class="invoice-footer-strip"></div>
+    </main>
+  </div>
+
+  <!-- Floating Action Bar -->
+  <div id="floatingActionBar" class="floating-action-bar no-print">
+    <div class="action-group">
+      <button type="button" id="previewBtn" class="btn-action primary">Preview</button>
+      <button type="button" id="saveDraftBtn" class="btn-action secondary">Save to Node.js Memory</button>
+      <button type="button" id="resetFormBtn" class="btn-action danger outline">Reset</button>
+    </div>
+  </div>
+
+  <!-- Preview Action Overlay -->
+  <div id="previewActions" class="floating-action-bar no-print hidden">
+    <div class="action-group">
+      <button type="button" id="printDocBtn" class="btn-action primary">Download PDF</button>
+      <button type="button" id="backToEditBtn" class="btn-action secondary">Back to Edit</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
