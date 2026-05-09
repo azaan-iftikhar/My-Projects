@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himalayan Sweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="title-bar-text">Himalayan Sweeper</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close">X</button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div class="game-dashboard">
+                <div class="digital-display" id="mine-counter">010</div>
+                <button class="reset-button" id="reset-button">🙂</button>
+                <div class="digital-display" id="timer">000</div>
+            </div>
+            <div class="game-board-container outset-border">
+                <div class="game-board inset-border" id="game-board"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

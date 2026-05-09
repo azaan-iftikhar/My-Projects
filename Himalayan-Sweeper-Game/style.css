@@ -1,0 +1,152 @@
+body {
+    background-color: #008080; /* Windows 95 desktop color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'MS Sans Serif', Tahoma, sans-serif;
+    user-select: none;
+}
+
+.window {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #000000 #000000 #dfdfdf;
+    padding: 2px;
+    box-shadow: 1px 1px 0 #000;
+}
+
+.title-bar {
+    background: linear-gradient(90deg, #000080, #1084d0);
+    color: white;
+    padding: 3px 2px 3px 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.title-bar-controls button {
+    width: 16px;
+    height: 14px;
+    background-color: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #000000 #000000 #dfdfdf;
+    margin-left: 2px;
+    cursor: pointer;
+    font-size: 8px;
+    line-height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.window-body {
+    padding: 10px;
+}
+
+.game-dashboard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.digital-display {
+    background-color: black;
+    color: red;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 2px 4px;
+    border: 2px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+    width: 48px;
+    text-align: right;
+}
+
+.reset-button {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+}
+
+.reset-button:active {
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+.game-board-container {
+    padding: 4px;
+}
+
+.outset-border {
+    border: 3px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.inset-border {
+    border: 3px solid;
+    border-color: #808080 #dfdfdf #dfdfdf #808080;
+}
+
+.game-board {
+    display: grid;
+    background-color: #c0c0c0;
+}
+
+.cell {
+    width: 24px;
+    height: 24px;
+    background-color: #c0c0c0;
+    border: 3px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.cell:active:not(.revealed) {
+    border: 1px solid #808080;
+    border-right-color: #dfdfdf;
+    border-bottom-color: #dfdfdf;
+}
+
+.cell.revealed {
+    border: 1px solid #808080;
+    border-right-color: #dfdfdf;
+    border-bottom-color: #dfdfdf;
+    background-color: #c0c0c0;
+}
+
+.cell.mine {
+    background-color: red;
+}
+
+/* Number colors */
+.num-1 { color: blue; }
+.num-2 { color: green; }
+.num-3 { color: red; }
+.num-4 { color: darkblue; }
+.num-5 { color: darkred; }
+.num-6 { color: teal; }
+.num-7 { color: black; }
+.num-8 { color: gray; }
