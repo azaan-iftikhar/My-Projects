@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team FAQ</title>
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="faq-container">
+        <header class="faq-header">
+            <h1>Team FAQ</h1>
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Search questions..." aria-label="Search FAQ questions">
+            </div>
+        </header>
+
+        <main class="faq-list" id="faqList">
+            <!-- FAQ Item 1 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="question-text">How do I request time off?</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>Log in to the HR portal, click "Time Off," fill in your dates, and submit. For leaves longer than 3 days, apply at least 2 weeks in advance.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="question-text">How do I connect to the VPN?</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>Download the VPN client from the internal tools page. Use your company email and password, then verify with the 2FA app.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="question-text">Where can I find our coding standards?</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>They are in the company GitHub wiki under "Engineering Practices." Ask your lead if you need access.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="question-text">Who do I contact for IT support?</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>Email it-help@company.com or raise a ticket on the IT portal. For urgent issues, call extension 555.</p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="faq-item">
+                <button class="faq-question" aria-expanded="false">
+                    <span class="question-text">What time is the daily standup?</span>
+                    <span class="icon"></span>
+                </button>
+                <div class="faq-answer">
+                    <p>We meet every weekday at 9:30 AM on Google Meet. The link is in the team calendar invite.</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

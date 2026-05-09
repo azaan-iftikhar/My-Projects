@@ -1,0 +1,208 @@
+/* Base Variables for Teal and Charcoal Color Scheme */
+:root {
+    --charcoal-bg: #222831;
+    --charcoal-text: #393E46;
+    --charcoal-light: #4A5568;
+    --teal-accent: #00ADB5;
+    --teal-hover: #00939A;
+    --white: #FFFFFF;
+    --gray-bg: #F7FAFC;
+    --gray-border: #E2E8F0;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+    --transition-speed: 0.3s;
+}
+
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--charcoal-bg);
+    color: var(--charcoal-text);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+}
+
+/* Main Container */
+.faq-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Header & Search */
+.faq-header {
+    text-align: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.faq-header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: var(--teal-accent);
+}
+
+.search-wrapper {
+    position: relative;
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    background-color: var(--white);
+    color: var(--charcoal-text);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-speed) ease;
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--teal-accent);
+    box-shadow: 0 0 0 4px rgba(0, 173, 181, 0.2);
+}
+
+#searchInput::placeholder {
+    color: var(--charcoal-light);
+}
+
+/* FAQ List */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* FAQ Item Card */
+.faq-item {
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.faq-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Accordion Question Button */
+.faq-question {
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem 1.5rem;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--charcoal-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.faq-question:hover {
+    background-color: var(--gray-bg);
+    color: var(--teal-accent);
+}
+
+.faq-question[aria-expanded="true"] {
+    color: var(--teal-accent);
+    background-color: rgba(0, 173, 181, 0.05);
+}
+
+/* Accordion Icon (+ / -) */
+.icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.icon::before,
+.icon::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Horizontal line */
+.icon::before {
+    width: 14px;
+    height: 2px;
+}
+
+/* Vertical line */
+.icon::after {
+    width: 2px;
+    height: 14px;
+}
+
+.faq-question[aria-expanded="true"] .icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Accordion Answer */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+}
+
+.faq-answer p {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+    color: var(--charcoal-light);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Filtering logic */
+.faq-item.hidden {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .faq-header h1 {
+        font-size: 2rem;
+    }
+    
+    .faq-question {
+        font-size: 1.05rem;
+        padding: 1rem 1.25rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 1.25rem 1rem 1.25rem;
+    }
+}
