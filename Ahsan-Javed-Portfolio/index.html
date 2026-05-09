@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Brand - Productivity Expert & Author</title>
+    <meta name="description"
+        content="Join thousands of readers getting actionable productivity tips, practical life advice, and highlights from bestselling books.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Hero Wrapper Container - Contains Navbar, Hero, and Newsletter -->
+    <div class="hero-wrapper">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <svg width="180" height="50" viewBox="0 0 220 60" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Text -->
+                        <text x="10" y="45" font-family="'Merriweather', serif" font-weight="900" font-size="32"
+                            fill="#333">Ahsan Javed</text>
+                        <!-- Wave Path similar to reference -->
+                        <path d="M 5,45 Q 40,55 60,35 T 160,20" stroke="#5BC0DE" stroke-width="4" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+                    </svg>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-container">
+                <!-- Left Side: Portrait with Blob -->
+                <div class="hero-left">
+                    <div class="blob-container">
+                        <svg class="blob-shape" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 200,50 
+                                 C 280,50 350,120 350,200
+                                 C 350,280 280,350 200,350
+                                 C 120,350 50,280 50,200
+                                 C 50,120 120,50 200,50 Z" fill="#FCD34D" />
+                        </svg>
+                        <div class="portrait-wrapper">
+                            <img src="images/Ahsan.jpeg" alt="Portrait" class="portrait-image" id="portrait">
+                        </div>
+                        <!-- Decorative accent blob -->
+                        <svg class="accent-blob" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 20,50 Q 20,20 50,20 T 80,50 T 50,80 T 20,50" fill="#FCD34D" opacity="0.6" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Right Side: Headline & Intro -->
+                <div class="hero-right">
+                    <div class="headline-wrapper">
+                        <h1 class="main-headline">
+                            Hey Friends
+                            <span class="wave-emoji">👋</span>
+                        </h1>
+                        <svg class="underline-svg" viewBox="0 0 350 25" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10,12 Q 90,8 175,10 T 340,12" stroke="#5BC0DE" stroke-width="4" fill="none"
+                                stroke-linecap="round" />
+                            <path d="M 10,18 Q 90,14 175,16 T 340,18" stroke="#5BC0DE" stroke-width="4" fill="none"
+                                stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <p class="subheadline">
+                        I'm Ahsan Javed. I'm a <strong>Content & Script Writer</strong> who helps brands tell compelling
+                        stories and create engaging content that resonates with their audience.
+                    </p>
+
+                    <!-- Decorative Arrow -->
+                    <svg class="curly-arrow" viewBox="0 0 100 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Spiral path -->
+                        <path d="M 50,20 
+                             Q 65,25 65,35
+                             Q 65,45 50,50
+                             Q 35,55 35,70
+                             Q 35,85 50,90
+                             Q 60,95 60,110
+                             Q 60,125 50,135
+                             Q 42,145 42,160
+                             L 42,175" stroke="#FC9C76" stroke-width="5" fill="none" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        <!-- Arrow head -->
+                        <path d="M 42,175 L 35,165 M 42,175 L 49,167" stroke="#FC9C76" stroke-width="5" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Card (Floating) -->
+        <section class="newsletter-section">
+            <div class="newsletter-card">
+                <div class="newsletter-left">
+                    <div class="newsletter-header">
+                        <h2 class="newsletter-title" style="font-size: 1.5rem;">Subscribe to know about offers on my
+                            services and be a part of a newsletter (Starting in new future)</h2>
+                        <svg class="paper-plane" width="40" height="40" viewBox="0 0 40 40"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 8,20 L 32,8 L 26,32 L 20,22 Z M 20,22 L 32,8" stroke="#5BC0DE" stroke-width="3"
+                                fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+
+                </div>
+                <div class="newsletter-right" style="justify-content: center;">
+                    <form class="newsletter-form" id="newsletterForm">
+                        <input type="email" placeholder="Your Email" class="email-input" required
+                            aria-label="Email address">
+                        <button type="submit" class="subscribe-button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- End Hero Wrapper -->
+
+    <!-- Services Section -->
+    <section class="help-section" id="services">
+        <div class="help-container">
+            <!-- Headline Card -->
+            <div class="help-headline-card">
+                <h2 class="help-headline">Services</h2>
+                <svg class="wavy-lines" viewBox="0 0 250 50" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 0,10 Q 30,5 60,10 T 120,10 T 180,10 T 240,10" stroke="#5BC0DE" stroke-width="3"
+                        fill="none" stroke-linecap="round" />
+                    <path d="M 0,25 Q 30,20 60,25 T 120,25 T 180,25 T 240,25" stroke="#5BC0DE" stroke-width="3"
+                        fill="none" stroke-linecap="round" />
+                    <path d="M 0,40 Q 30,35 60,40 T 120,40 T 180,40 T 240,40" stroke="#5BC0DE" stroke-width="3"
+                        fill="none" stroke-linecap="round" />
+                </svg>
+            </div>
+
+            <!-- Card 1: Content Writing (Top Right) -->
+            <div class="service-card">
+                <div class="card-icon">
+                    <img src="images/content-writing.png" alt="Content Writing">
+                </div>
+                <h3 class="card-title">Content Writing</h3>
+                <p class="card-description">
+                    Professional content creation services for videos, podcasts, and digital media.
+                </p>
+                <a href="#" class="card-link">Get started →</a>
+            </div>
+
+            <!-- Card 2: Script Writing (Bottom Left) -->
+            <div class="service-card">
+                <div class="card-icon">
+                    <img src="images/script-writing.png" alt="Script Writing">
+                </div>
+                <h3 class="card-title">Script Writing</h3>
+                <p class="card-description">
+                    Engaging narratives and scripts that captivate your audience.
+                </p>
+                <a href="#" class="card-link">Get started →</a>
+            </div>
+
+            <!-- Card 3: SEO Content (Bottom Right) -->
+            <div class="service-card">
+                <div class="card-icon">
+                    <img src="images/seo.png" alt="SEO Content">
+                </div>
+                <h3 class="card-title">SEO Content</h3>
+                <p class="card-description">
+                    Data-driven content strategies that improve your search rankings.
+                </p>
+                <a href="#" class="card-link">Get started →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Work Section -->
+    <section class="my-work-section" id="work">
+        <div class="my-work-container">
+            <div class="my-work-header">
+                <h2 class="my-work-title">
+                    My Work
+                    <svg class="curved-underline" viewBox="0 0 300 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 10,10 Q 150,2 290,10" stroke="#FF8C66" stroke-width="4" fill="none"
+                            stroke-linecap="round" />
+                    </svg>
+                </h2>
+                <p class="my-work-subtitle">Below are latest 3 projects I worked on or working on, which reflect my
+                    dedication and work.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card">
+                    <div class="project-number">01</div>
+                    <h3 class="project-title">Project 1</h3>
+                    <p class="project-description">
+                        A comprehensive content strategy for a tech startup, including blog posts, social media
+                        content,
+                        and email campaigns that increased engagement by 150%.
+                    </p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="project-card">
+                    <div class="project-number">02</div>
+                    <h3 class="project-title">Project 2</h3>
+                    <p class="project-description">
+                        Script writing for a YouTube channel with 500K+ subscribers, creating engaging narratives
+                        that
+                        boosted viewer retention by 40%.
+                    </p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card">
+                    <div class="project-number">03</div>
+                    <h3 class="project-title">Walkthrough Description</h3>
+                    <p class="project-description">
+                        SEO-optimized content for an e-commerce platform that helped achieve first-page rankings for
+                        20+
+                        competitive keywords.
+                    </p>
+                    <a href="#" class="project-link">View Project →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Summaries Section -->
+    <section class="book-summaries-section" id="books">
+        <div class="book-summaries-container">
+            <div class="book-summaries-header">
+                <div>
+                    <h2 class="book-summaries-title">
+                        Book Summaries
+                        <svg class="curved-underline" viewBox="0 0 350 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M 10,10 Q 175,2 340,10" stroke="#C3B1E1" stroke-width="4" fill="none"
+                                stroke-linecap="round" />
+                        </svg>
+                    </h2>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn carousel-prev" aria-label="Previous">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <button class="carousel-btn carousel-next" aria-label="Next">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <p class="book-summaries-subtitle">Read my summaries of books I have read</p>
+
+            <div class="carousel-wrapper">
+                <div class="book-carousel">
+                    <!-- Book Card 1 -->
+                    <div class="book-card">
+                        <div class="book-thumbnail"
+                            style="background: linear-gradient(135deg, #FFB6C1 0%, #FFA07A 100%);">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="10" width="30" height="40" rx="2" fill="white" opacity="0.3" />
+                                <rect x="18" y="13" width="24" height="34" rx="1" fill="white" opacity="0.5" />
+                                <line x1="21" y1="20" x2="36" y2="20" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="25" x2="36" y2="25" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="30" x2="30" y2="30" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                            </svg>
+                        </div>
+                        <div class="book-info">
+                            <p class="book-date">January 2026</p>
+                            <h3 class="book-title">Atomic Habits</h3>
+                            <a href="#" class="book-link">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 2 -->
+                    <div class="book-card">
+                        <div class="book-thumbnail"
+                            style="background: linear-gradient(135deg, #A8E6CF 0%, #56CCF2 100%);">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="10" width="30" height="40" rx="2" fill="white" opacity="0.3" />
+                                <rect x="18" y="13" width="24" height="34" rx="1" fill="white" opacity="0.5" />
+                                <line x1="21" y1="20" x2="36" y2="20" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="25" x2="36" y2="25" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="30" x2="30" y2="30" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                            </svg>
+                        </div>
+                        <div class="book-info">
+                            <p class="book-date">December 2025</p>
+                            <h3 class="book-title">Deep Work</h3>
+                            <a href="#" class="book-link">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 3 -->
+                    <div class="book-card">
+                        <div class="book-thumbnail"
+                            style="background: linear-gradient(135deg, #C3B1E1 0%, #9B7EBD 100%);">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="10" width="30" height="40" rx="2" fill="white" opacity="0.3" />
+                                <rect x="18" y="13" width="24" height="34" rx="1" fill="white" opacity="0.5" />
+                                <line x1="21" y1="20" x2="36" y2="20" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="25" x2="36" y2="25" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="30" x2="30" y2="30" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                            </svg>
+                        </div>
+                        <div class="book-info">
+                            <p class="book-date">November 2025</p>
+                            <h3 class="book-title">The 4-Hour Work Week</h3>
+                            <a href="#" class="book-link">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 4 -->
+                    <div class="book-card">
+                        <div class="book-thumbnail"
+                            style="background: linear-gradient(135deg, #FFD89C 0%, #FFA94D 100%);">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="10" width="30" height="40" rx="2" fill="white" opacity="0.3" />
+                                <rect x="18" y="13" width="24" height="34" rx="1" fill="white" opacity="0.5" />
+                                <line x1="21" y1="20" x2="36" y2="20" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="25" x2="36" y2="25" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                                <line x1="21" y1="30" x2="30" y2="30" stroke="white" stroke-width="1.5"
+                                    stroke-linecap="round" opacity="0.8" />
+                            </svg>
+                        </div>
+                        <div class="book-info">
+                            <p class="book-date">October 2025</p>
+                            <h3 class="book-title">Thinking, Fast and Slow</h3>
+                            <a href="#" class="book-link">View →</a>
+                        </div>
+                    </div>
+
+                    <!-- Book Card 5 -->
+                    <div class="book-card">
+                        <div class="book-thumbnail" style="background-color: #AEC6CF;">
+                            <svg width="80" height="80" viewBox="0 0 80 80" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 15H60V65H20V15Z" stroke="white" stroke-width="2" fill="none" />
+                                <path d="M25 25H55M25 35H55M25 45H45" stroke="white" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div class="book-details">
+                            <h3 class="book-title">The Power of Now</h3>
+                            <p class="book-description">A guide to spiritual enlightenment and living in the present
+                                moment.</p>
+                            <a href="#" class="book-link">View →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="read-all-container">
+                <a href="#" class="read-all-btn">Read all summaries</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <h3 class="footer-logo">Ahsan Javed</h3>
+                    <p class="footer-description">Content writer and storyteller helping brands create engaging
+                        narratives.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#work">My Work</a></li>
+                        <li><a href="#books">Book Summaries</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Services</h4>
+                    <ul>
+                        <li><a href="#services">Content Writing</a></li>
+                        <li><a href="#services">Scriptwriting</a></li>
+                        <li><a href="#services">SEO Content</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div class="footer-social">
+                    <h4 class="footer-heading">Connect</h4>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/ahsan-javed-a3a749355/" aria-label="LinkedIn"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                        <a href="https://x.com/imahsan62" aria-label="Twitter" target="_blank"
+                            rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/txtahsan?igsh=amNibW40enRkb3R6" aria-label="Instagram"
+                            target="_blank" rel="noopener noreferrer">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            </svg>
+                        </a>
+                        <a href="mailto:contact@ahsanjaved.com" aria-label="Email">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Ahsan Javed. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
