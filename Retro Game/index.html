@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retro Space Arcade</title>
+    <!-- Pixel font for arcade aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- CRT Scanline overlay effect -->
+        <div class="scanlines"></div>
+        
+        <div id="ui-layer">
+            <div id="score-display">SCORE: <span id="score">0</span></div>
+            <div id="lives-display">LIVES: <span id="lives">3</span></div>
+        </div>
+        
+        <canvas id="gameCanvas" width="600" height="800"></canvas>
+        
+        <div id="game-over-screen" class="hidden overlay-screen">
+            <h1>GAME OVER</h1>
+            <p>FINAL SCORE: <span id="final-score">0</span></p>
+            <p class="blink">PRESS SPACE TO RESTART</p>
+        </div>
+        
+        <div id="start-screen" class="overlay-screen">
+            <h1>NEON STRIKER</h1>
+            <p class="blink">PRESS SPACE TO START</p>
+        </div>
+    </div>
+
+    <!-- Scripts loaded sequentially -->
+    <script src="src/input.js"></script>
+    <script src="src/bullet.js"></script>
+    <script src="src/enemy.js"></script>
+    <script src="src/player.js"></script>
+    <script src="src/game.js"></script>
+    <script src="src/main.js"></script>
+</body>
+</html>
