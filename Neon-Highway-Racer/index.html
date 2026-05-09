@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Highway Racer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Teko:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="gameContainer">
+        <!-- 3D Canvas will be injected here by Three.js -->
+        
+        <!-- UI Overlays -->
+        <div id="uiLayer">
+            <!-- Main Menu -->
+            <div id="mainMenu" class="screen active">
+                <h1 class="glitch" data-text="NIGHT HIGHWAY">NIGHT HIGHWAY</h1>
+                <h2>RACER 3D</h2>
+                
+                <div class="car-selection">
+                    <p>SELECT YOUR RIDE</p>
+                    <div class="car-options">
+                        <div class="car-option selected" data-color="#cc0000" style="background-color: #cc0000;"></div>
+                        <div class="car-option" data-color="#0022cc" style="background-color: #0022cc;"></div>
+                        <div class="car-option" data-color="#22cc22" style="background-color: #22cc22;"></div>
+                        <div class="car-option" data-color="#cccccc" style="background-color: #cccccc;"></div>
+                    </div>
+                </div>
+                
+                <button id="startBtn">START ENGINE</button>
+                <div class="controls-hint">
+                    PC: Arrows/WASD to Drive. Space for Nitro.<br>
+                    Mobile: Tap L/R to Steer. Auto-Accel.
+                </div>
+            </div>
+
+            <!-- Game HUD -->
+            <div id="gameHUD" class="screen hidden">
+                <div class="hud-top">
+                    <div class="hud-item score-box">SCORE: <span id="scoreVal">0</span></div>
+                    <div class="hud-item high-score-box">HI: <span id="highScoreVal">0</span></div>
+                    <div class="hud-item coins-box">🪙 <span id="coinsVal">0</span></div>
+                </div>
+                
+                <div id="nearMissText" class="popup-text hidden">NEAR MISS +100!</div>
+
+                <div class="hud-bottom">
+                    <div class="speed-box">
+                        <span id="speedVal">0</span> <span class="unit">KM/H</span>
+                    </div>
+                    <div class="nitro-box">
+                        <div class="nitro-label">NITRO</div>
+                        <div class="nitro-bar-container">
+                            <div id="nitroBar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game Over -->
+            <div id="gameOver" class="screen hidden">
+                <h1 class="wasted">CRASHED!</h1>
+                <p>FINAL SCORE: <span id="finalScore">0</span></p>
+                <p>COINS: <span id="finalCoins">0</span></p>
+                <button id="restartBtn">TRY AGAIN</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

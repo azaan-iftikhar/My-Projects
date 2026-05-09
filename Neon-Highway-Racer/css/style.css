@@ -1,0 +1,283 @@
+:root {
+    --bg-color: #050510;
+    --text-primary: #ffffff;
+    --neon-pink: #ff0055;
+    --neon-blue: #00f3ff;
+    --neon-green: #00ff66;
+    --neon-yellow: #ffdd00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--bg-color);
+    font-family: 'Teko', sans-serif;
+    color: var(--text-primary);
+}
+
+#gameContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at bottom, #1a0b2e 0%, #050510 100%);
+}
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* UI Layer Overlay */
+#uiLayer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none; /* Let clicks pass to canvas if needed */
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(5, 5, 16, 0.85);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s ease;
+    pointer-events: auto;
+}
+
+.hidden {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Typography & Main Menu */
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: var(--neon-blue);
+    text-shadow: 0 0 10px var(--neon-blue);
+    margin-bottom: 3rem;
+    letter-spacing: 5px;
+}
+
+.car-selection {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.car-selection p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.car-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.car-option {
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.car-option:hover {
+    transform: scale(1.1);
+}
+
+.car-option.selected {
+    border-color: #fff;
+    box-shadow: 0 0 15px rgba(255,255,255,0.8);
+    transform: scale(1.2);
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    background: transparent;
+    color: var(--neon-blue);
+    border: 2px solid var(--neon-blue);
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    box-shadow: 0 0 10px rgba(0, 243, 255, 0.2) inset, 0 0 10px rgba(0, 243, 255, 0.2);
+}
+
+button:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 20px var(--neon-blue) inset, 0 0 20px var(--neon-blue);
+}
+
+.controls-hint {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #888;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* HUD */
+#gameHUD {
+    background: none;
+    backdrop-filter: none;
+    justify-content: space-between;
+    padding: 2rem;
+    pointer-events: none;
+}
+
+.hud-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    text-shadow: 2px 2px 0px #000;
+}
+
+.hud-item {
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    border-left: 3px solid;
+}
+
+.score-box { border-color: var(--neon-blue); }
+.high-score-box { border-color: var(--neon-pink); color: var(--neon-pink);}
+.coins-box { border-color: var(--neon-yellow); color: var(--neon-yellow); }
+
+.hud-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.speed-box {
+    font-size: 4rem;
+    line-height: 1;
+    text-shadow: 0 0 10px var(--neon-blue);
+    background: rgba(0,0,0,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border-bottom: 4px solid var(--neon-blue);
+}
+
+.speed-box .unit {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.nitro-box {
+    width: 200px;
+    text-align: right;
+}
+
+.nitro-label {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    color: var(--neon-pink);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.nitro-bar-container {
+    width: 100%;
+    height: 20px;
+    background: rgba(0,0,0,0.7);
+    border: 2px solid var(--neon-pink);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#nitroBar {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff0055, #ffaa00);
+    box-shadow: 0 0 10px #ff0055;
+    transition: width 0.1s linear;
+}
+
+/* Popups */
+.popup-text {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.5rem;
+    color: var(--neon-yellow);
+    text-shadow: 0 0 10px var(--neon-yellow), 2px 2px 0px #000;
+    animation: floatUp 1s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -100%) scale(1.5); }
+}
+
+/* Game Over */
+.wasted {
+    color: #ff0000;
+    text-shadow: 0 0 20px #ff0000;
+    font-size: 4rem;
+}
+
+#gameOver p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    color: #aaa;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    .hud-top { font-size: 0.7rem; flex-direction: column; gap: 5px; align-items: flex-start;}
+    .speed-box { font-size: 2.5rem; }
+    .nitro-box { width: 150px; }
+}
