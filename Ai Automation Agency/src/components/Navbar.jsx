@@ -9,6 +9,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center space-x-8">
             <a className="text-primary font-bold border-b-2 border-brand-accent pb-1" href="#">HOME</a>
+            <a className="text-secondary hover:text-on-surface font-semibold transition-colors" href="#contact">CONTACT US</a>
         </div>
         <button className="md:hidden text-on-surface p-2">
             <span className="material-symbols-outlined">menu</span>
