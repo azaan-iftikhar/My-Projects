@@ -13,23 +13,6 @@ const Hero = () => {
   // Since we have 4 icons, we repeat them 4 times to fill the viewport width for a seamless infinite loop
   const marqueeItems = [...icons, ...icons, ...icons, ...icons];
 
-  // Smooth Slide-and-Fade Word Swapper Logic
-  const words = ["Ecommerce", "Shopify", "Amazon", "Workflows"];
-  const [wordIndex, setWordIndex] = useState(0);
-  const [fadeState, setFadeState] = useState("fade-in");
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setFadeState("fade-out");
-      
-      setTimeout(() => {
-        setWordIndex((prev) => (prev + 1) % words.length);
-        setFadeState("fade-in");
-      }, 350); // Matches transition duration
-    }, 2800); // Swap every 2.8 seconds
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <header className="relative w-full overflow-hidden bg-surface-container-lowest pt-section-padding-sm md:pt-section-padding-lg pb-12 flex flex-col items-center justify-between min-h-[80vh]">
