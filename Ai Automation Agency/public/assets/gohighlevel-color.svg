@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60" fill="none">
+  <!-- Icon: Speech bubble with lightning bolt -->
+  <g transform="translate(5, 10)">
+    <!-- Bubble Background -->
+    <path d="M 20 0 C 31.046 0 40 8.954 40 20 C 40 31.046 31.046 40 20 40 C 16.5 40 13.2 39.1 10.3 37.5 L 2 40 L 4.5 31.7 C 1.7 28.5 0 24.5 0 20 C 0 8.954 8.954 0 20 0 Z" fill="#185ADB"/>
+    <!-- Lightning Bolt -->
+    <path d="M 23 10 L 12 22 L 19 22 L 17 30 L 28 18 L 21 18 Z" fill="#FFFFFF"/>
+  </g>
+  <!-- Text Wordmark: "HighLevel" -->
+  <text x="56" y="37" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#0F172A">HighLevel</text>
+</svg>

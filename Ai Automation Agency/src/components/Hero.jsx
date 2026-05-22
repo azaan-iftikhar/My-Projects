@@ -5,6 +5,7 @@ const icons = [
   { name: 'N8N', src: '/assets/n8n-color.svg' },
   { name: 'Make.com', src: '/assets/make-color.svg' },
   { name: 'Zapier', src: '/assets/zapier-text.svg' },
+  { name: 'GoHighLevel', src: '/assets/gohighlevel-color.svg' },
   { name: 'Python', src: '/assets/python-3.svg' },
   { name: 'LangChain', src: '/assets/langchain-text.svg' }
 ];
