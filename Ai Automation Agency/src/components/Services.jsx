@@ -95,19 +95,19 @@ const Services = () => {
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-low rounded-full hidden lg:block"></div>
                     
                         <button onClick={() => handleTabChange('scraping')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'scraping' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'scraping' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
+                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'scraping' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
                             <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'scraping' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Data Extraction / Scraping</h4>
                             <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Real-time competitor & stock data</p>
                         </button>
 
                         <button onClick={() => handleTabChange('comments')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'comments' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'comments' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
+                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'comments' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
                             <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'comments' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Auto Comment Replies</h4>
                             <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Instant customer engagement</p>
                         </button>
 
                         <button onClick={() => handleTabChange('email')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'email' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'email' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
+                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'email' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
                             <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'email' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Email Marketing Automation</h4>
                             <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Personalized outreach at scale</p>
                         </button>
