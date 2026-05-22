@@ -6,9 +6,9 @@ const serviceData = {
         title: "Data Extraction / Scraping Automation",
         visuals: (
             <>
-                <img alt="Amazon" className="absolute w-16 h-16 rounded-xl shadow-lg border-2 border-white -top-2 -left-2 z-10 bg-white object-contain p-2 zoomable-image" src="/assets/amazon-color.svg"/>
-                <img alt="eBay" className="absolute w-20 h-20 rounded-2xl shadow-xl border-2 border-white z-20 bg-white object-contain p-2 zoomable-image" src="/assets/ebay_icon/screen.png"/>
-                <img alt="Etsy" className="absolute w-16 h-16 rounded-xl shadow-lg border-2 border-white -bottom-2 -right-2 z-30 bg-white object-contain p-2 zoomable-image" src="/assets/etsy_icon/screen.png"/>
+                <img alt="Amazon" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -top-2 -left-2 z-10 bg-white object-contain p-3.5 zoomable-image" src="/assets/amazon-color.svg"/>
+                <img alt="eBay" className="absolute w-20 h-20 rounded-2xl shadow-lg border border-brand-border/30 z-20 bg-white object-contain p-4 zoomable-image" src="/assets/ebay-color.svg"/>
+                <img alt="Etsy" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -bottom-2 -right-2 z-30 bg-white object-contain p-3.5 zoomable-image" src="/assets/etsy-color.svg"/>
             </>
         ),
         desc: "Extract competitor pricing and stock data in real-time.",
@@ -22,9 +22,9 @@ const serviceData = {
         title: "Auto Social Comment Replies",
         visuals: (
             <>
-                <img alt="Pinterest" className="absolute w-16 h-16 rounded-full shadow-lg border-2 border-white -top-2 -left-2 z-10 zoomable-image" src="/assets/pinterest_logo_high_quality_vector_icon_original_brand_red_color_e60023/screen.png"/>
-                <img alt="Instagram" className="absolute w-20 h-20 rounded-2xl shadow-xl border-2 border-white z-20 zoomable-image" src="/assets/instagram_logo_high_quality_vector_icon_original_brand_colors_gradient_of/screen.png"/>
-                <img alt="Facebook" className="absolute w-16 h-16 rounded-xl shadow-lg border-2 border-white -bottom-2 -right-2 z-30 zoomable-image" src="/assets/facebook_logo_professional_vector_icon_original_brand_blue_color_1877f2_clean/screen.png"/>
+                <img alt="Pinterest" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -top-2 -left-2 z-10 bg-white object-contain p-3.5 zoomable-image" src="/assets/pinterest-color.svg"/>
+                <img alt="Instagram" className="absolute w-20 h-20 rounded-2xl shadow-lg border border-brand-border/30 z-20 bg-white object-contain p-4.5 zoomable-image" src="/assets/instagram-color.svg"/>
+                <img alt="Facebook" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -bottom-2 -right-2 z-30 bg-white object-contain p-3.5 zoomable-image" src="/assets/facebook-color.svg"/>
             </>
         ),
         desc: "Drive engagement and conversions with instant, intelligent replies to customer queries.",
