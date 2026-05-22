@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 const icons = [
   { name: 'N8N', src: '/assets/n8n-color.svg' },
@@ -39,17 +39,7 @@ const Hero = () => {
       {/* Main Content */}
       <div className="relative max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center flex flex-col items-center gap-8 z-20 mt-12 md:mt-20">
         <h1 className="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg text-brand-dark leading-tight max-w-5xl">
-          We Automate Your{" "}
-          <span className="inline-block min-w-[210px] lg:min-w-[340px] text-center align-baseline">
-            <span className={`inline-block text-brand-accent transition-all duration-[350ms] ease-out transform ${
-              fadeState === "fade-in" 
-                ? "opacity-100 translate-y-0 scale-100" 
-                : "opacity-0 -translate-y-2 scale-95"
-            }`}>
-              {words[wordIndex]}
-            </span>
-          </span>{" "}
-          Operations
+          We Automate Your <span className="text-brand-accent">Ecommerce</span> Operations
         </h1>
         <p className="font-body-lg text-body-lg text-brand-gray-text max-w-2xl leading-relaxed">
           Custom AI workflows for email, product hunting, comments, posting, chatbots, and web dev. Built for Amazon, eBay, and DTC sellers.
