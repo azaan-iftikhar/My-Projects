@@ -6,7 +6,7 @@ const serviceData = {
         title: "Data Extraction / Scraping Automation",
         visuals: (
             <>
-                <img alt="Amazon" className="absolute w-16 h-16 rounded-xl shadow-lg border-2 border-white -top-2 -left-2 z-10 bg-white object-contain p-2 zoomable-image" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Amazon_icon.svg"/>
+                <img alt="Amazon" className="absolute w-16 h-16 rounded-xl shadow-lg border-2 border-white -top-2 -left-2 z-10 bg-white object-contain p-2 zoomable-image" src="/assets/amazon-color.svg"/>
                 <img alt="eBay" className="absolute w-20 h-20 rounded-2xl shadow-xl border-2 border-white z-20 bg-white object-contain p-2 zoomable-image" src="/assets/ebay_icon/screen.png"/>
                 <img alt="Etsy" className="absolute w-16 h-16 rounded-xl shadow-lg border-2 border-white -bottom-2 -right-2 z-30 bg-white object-contain p-2 zoomable-image" src="/assets/etsy_icon/screen.png"/>
             </>
