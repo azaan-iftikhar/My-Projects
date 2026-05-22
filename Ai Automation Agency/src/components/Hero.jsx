@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const icons = [
   { name: 'N8N', src: '/assets/n8n-color.svg' },
@@ -12,6 +12,39 @@ const Hero = () => {
   // Since we have 4 icons, we repeat them 4 times to fill the viewport width for a seamless infinite loop
   const marqueeItems = [...icons, ...icons, ...icons, ...icons];
 
+  // Typewriter Loop Logic
+  const words = ["Ecommerce", "Shopify", "Amazon", "Workflows"];
+  const [wordIndex, setWordIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    let timer;
+    const fullWord = words[wordIndex];
+
+    if (!isDeleting) {
+      timer = setTimeout(() => {
+        setCurrentText(fullWord.substring(0, currentText.length + 1));
+      }, typingSpeed);
+
+      if (currentText === fullWord) {
+        timer = setTimeout(() => setIsDeleting(true), 1500); // Pause on full word
+      }
+    } else {
+      timer = setTimeout(() => {
+        setCurrentText(fullWord.substring(0, currentText.length - 1));
+      }, 70); // Deleting is slightly faster
+
+      if (currentText === "") {
+        setIsDeleting(false);
+        setWordIndex((prev) => (prev + 1) % words.length);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, wordIndex]);
+
   return (
     <header className="relative w-full overflow-hidden bg-surface-container-lowest pt-section-padding-sm md:pt-section-padding-lg pb-12 flex flex-col items-center justify-between min-h-[80vh]">
 
@@ -21,7 +54,8 @@ const Hero = () => {
       {/* Main Content */}
       <div className="relative max-w-container-max mx-auto px-margin-mobile md:px-gutter text-center flex flex-col items-center gap-8 z-20 mt-12 md:mt-20">
         <h1 className="font-display-lg-mobile text-display-lg-mobile lg:font-display-lg lg:text-display-lg text-brand-dark leading-tight max-w-5xl">
-          We Automate Your <span className="text-brand-accent">Ecommerce</span> Operations
+          We Automate Your <span className="text-brand-accent">{currentText}</span>
+          <span className="text-brand-accent animate-pulse font-normal">|</span> Operations
         </h1>
         <p className="font-body-lg text-body-lg text-brand-gray-text max-w-2xl leading-relaxed">
           Custom AI workflows for email, product hunting, comments, posting, chatbots, and web dev. Built for Amazon, eBay, and DTC sellers.
