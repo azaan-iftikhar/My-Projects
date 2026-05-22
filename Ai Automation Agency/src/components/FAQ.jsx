@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ScrollReveal from './ScrollReveal';
 
 const faqs = [
   {
@@ -33,29 +34,33 @@ const FAQ = () => {
   return (
     <section className="w-full bg-surface py-section-padding-sm md:py-section-padding-lg">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
-        <div className="mb-12 text-center">
-            <h2 className="font-headline-lg-mobile text-headline-lg-mobile lg:font-headline-lg lg:text-headline-lg text-brand-dark mb-4">Frequently Asked Questions</h2>
-            <p className="font-body-lg text-body-lg text-brand-gray-text max-w-2xl mx-auto">Everything you need to know about integrating AI automation into your e-commerce operations.</p>
-        </div>
+        <ScrollReveal>
+          <div className="mb-12 text-center">
+              <h2 className="font-headline-lg-mobile text-headline-lg-mobile lg:font-headline-lg lg:text-headline-lg text-brand-dark mb-4">Frequently Asked Questions</h2>
+              <p className="font-body-lg text-body-lg text-brand-gray-text max-w-2xl mx-auto">Everything you need to know about integrating AI automation into your e-commerce operations.</p>
+          </div>
+        </ScrollReveal>
         <div className="max-w-3xl mx-auto flex flex-col gap-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="minimal-card px-6 py-4 cursor-pointer hover:shadow-md transition-shadow duration-300" onClick={() => toggleFAQ(index)}>
-              <div className="flex justify-between items-center gap-4">
-                <h3 className={`font-headline-sm text-headline-sm transition-colors ${openIndex === index ? 'text-brand-accent' : 'text-brand-dark'}`}>
-                  {faq.question}
-                </h3>
-                <span className={`material-symbols-outlined text-brand-dark transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-brand-accent' : ''}`}>
-                  expand_more
-                </span>
-              </div>
-              <div className={`grid transition-all duration-300 overflow-hidden ${openIndex === index ? 'grid-rows-[1fr] mt-4 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
-                <div className="min-h-0">
-                  <p className="font-body-md text-body-md text-brand-gray-text leading-relaxed">
-                    {faq.answer}
-                  </p>
+            <ScrollReveal key={index} delay={index * 100}>
+              <div className="minimal-card px-6 py-4 cursor-pointer hover:shadow-md transition-shadow duration-300 transition-all hover:scale-[1.01]" onClick={() => toggleFAQ(index)}>
+                <div className="flex justify-between items-center gap-4">
+                  <h3 className={`font-headline-sm text-headline-sm transition-colors ${openIndex === index ? 'text-brand-accent' : 'text-brand-dark'}`}>
+                    {faq.question}
+                  </h3>
+                  <span className={`material-symbols-outlined text-brand-dark transition-transform duration-300 ${openIndex === index ? 'rotate-180 text-brand-accent' : ''}`}>
+                    expand_more
+                  </span>
+                </div>
+                <div className={`grid transition-all duration-300 overflow-hidden ${openIndex === index ? 'grid-rows-[1fr] mt-4 opacity-100' : 'grid-rows-[0fr] opacity-0'}`}>
+                  <div className="min-h-0">
+                    <p className="font-body-md text-body-md text-brand-gray-text leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

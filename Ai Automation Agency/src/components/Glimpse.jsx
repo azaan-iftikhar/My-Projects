@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ScrollReveal from './ScrollReveal';
 
 const glimpseData = {
     scraping: {
@@ -81,24 +82,30 @@ const Glimpse = () => {
 
     return (
         <section className="w-full bg-white py-section-padding-sm md:py-section-padding-lg">
-            <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-12 text-center">
-                <h2 className="font-headline-lg-mobile text-headline-lg-mobile lg:font-headline-lg lg:text-headline-lg text-brand-dark">Glimpse Of Work</h2>
-            </div>
+            <ScrollReveal>
+                <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter mb-12 text-center">
+                    <h2 className="font-headline-lg-mobile text-headline-lg-mobile lg:font-headline-lg lg:text-headline-lg text-brand-dark">Glimpse Of Work</h2>
+                </div>
+            </ScrollReveal>
             <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter">
-                <div className="flex flex-wrap justify-center gap-4 mb-16">
-                    <button onClick={() => handleTabChange('scraping')} className={`px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'scraping' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Data Extracting / Scraping</button>
-                    <button onClick={() => handleTabChange('social')} className={`px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'social' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Auto Social Media Comment Replies</button>
-                    <button onClick={() => handleTabChange('email')} className={`px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Email Marketing Automation</button>
-                </div>
-                <div className={`grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center fade-transition ${animating ? 'fade-out' : 'fade-in'}`}>
-                    <div className="flex flex-col gap-6">
-                        {displayData.visuals}
+                <ScrollReveal delay={100}>
+                    <div className="flex flex-wrap justify-center gap-4 mb-16">
+                        <button onClick={() => handleTabChange('scraping')} className={`px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'scraping' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Data Extracting / Scraping</button>
+                        <button onClick={() => handleTabChange('social')} className={`px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'social' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Auto Social Media Comment Replies</button>
+                        <button onClick={() => handleTabChange('email')} className={`px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Email Marketing Automation</button>
                     </div>
-                    <div className="flex flex-col gap-6 lg:pl-12">
-                        <h2 className="font-headline-lg-mobile text-headline-lg-mobile lg:font-headline-lg lg:text-headline-lg text-brand-dark">{displayData.title}</h2>
-                        <p className="font-body-lg text-body-lg text-brand-gray-text max-w-lg">{displayData.desc}</p>
+                </ScrollReveal>
+                <ScrollReveal delay={200}>
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center fade-transition ${animating ? 'fade-out' : 'fade-in'}`}>
+                        <div className="flex flex-col gap-6">
+                            {displayData.visuals}
+                        </div>
+                        <div className="flex flex-col gap-6 lg:pl-12">
+                            <h2 className="font-headline-lg-mobile text-headline-lg-mobile lg:font-headline-lg lg:text-headline-lg text-brand-dark">{displayData.title}</h2>
+                            <p className="font-body-lg text-body-lg text-brand-gray-text max-w-lg">{displayData.desc}</p>
+                        </div>
                     </div>
-                </div>
+                </ScrollReveal>
             </div>
         </section>
     );
