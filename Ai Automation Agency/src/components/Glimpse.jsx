@@ -6,10 +6,18 @@ const glimpseData = {
         desc: "Products scraped automatically in 5 minutes with 90% accuracy. No more all-day manual work in Jungle Scout or Helium 10. With each run it checks it first checks it database to avoid duplication and looks for new products",
         visuals: (
             <>
-                <div className="minimal-card p-2 bg-surface-container-low">
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">settings_input_component</span>
+                        Automation Workflow
+                    </div>
                     <img alt="Amazon Product Hunting Workflow" className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/product_hunting.jpeg"/>
                 </div>
-                <div className="minimal-card p-2 bg-surface-container-low">
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">table_chart</span>
+                        Result / Output Sheet
+                    </div>
                     <img alt="Ecommerce Automation Output Sheet" className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/output_of_automation.jpeg"/>
                 </div>
             </>
@@ -20,7 +28,11 @@ const glimpseData = {
         desc: "Automatically filter, categorize, and respond to comments across all your social channels. Our AI understands sentiment and context, ensuring your brand voice remains consistent while saving your team hours of manual work.",
         visuals: (
             <>
-                <div className="minimal-card p-2 bg-surface-container-low">
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">forum</span>
+                        Automation Dashboard
+                    </div>
                     <img alt="Dashboard showing social media analytics and auto-replies." className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/product_hunting.jpeg"/>
                 </div>
                  <div className="grid grid-cols-2 gap-4">
@@ -40,7 +52,11 @@ const glimpseData = {
         title: "Automated Email Sequences",
         desc: "Set up complex, multi-step email journeys that react to customer behavior in real-time. From welcome series to sophisticated cart abandonment flows, let the automation do the heavy lifting for your marketing team.",
         visuals: (
-             <div className="minimal-card p-2 bg-surface-container-low">
+             <div className="minimal-card p-4 bg-surface-container-low">
+                <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                    <span className="material-symbols-outlined text-[16px]">mail</span>
+                    Email Sequence Builder
+                </div>
                 <img alt="Email sequence builder interface." className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/output_of_automation.jpeg"/>
             </div>
         )
