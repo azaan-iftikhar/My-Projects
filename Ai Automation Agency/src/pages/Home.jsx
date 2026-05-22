@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
+import SectionDivider from '../components/SectionDivider';
 import Glimpse from '../components/Glimpse';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
@@ -33,8 +34,11 @@ function Home() {
     <div className="antialiased font-body-md text-body-md selection:bg-brand-accent selection:text-white relative">
       <Navbar />
       <Hero />
+      <SectionDivider />
       <Services />
+      <SectionDivider />
       <Glimpse />
+      <SectionDivider />
       <FAQ />
       <Footer />
 
