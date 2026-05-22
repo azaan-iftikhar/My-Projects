@@ -14,42 +14,79 @@ const Contact = () => {
                     </div>
                 </ScrollReveal>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    {/* Meeting Schedule Card */}
-                    <ScrollReveal delay={150}>
-                        <div className="minimal-card p-8 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_45px_rgba(0,0,0,0.04)] hover:-translate-y-1.5 hover:scale-[1.02] border border-transparent hover:border-brand-accent/20 transition-all duration-300">
-                            <div className="w-20 h-20 bg-brand-accent/10 rounded-full flex items-center justify-center text-brand-accent mb-2">
-                                <span className="material-symbols-outlined text-[40px]">calendar_month</span>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 max-w-6xl mx-auto items-stretch">
+                    {/* Embedded Calendly Scheduler */}
+                    <div className="lg:col-span-8 w-full">
+                        <ScrollReveal delay={150}>
+                            <div className="minimal-card p-4 md:p-6 flex flex-col gap-6 hover:shadow-[0_20px_45px_rgba(0,0,0,0.02)] border border-brand-border/40 transition-all duration-300">
+                                <div className="flex items-center gap-4 px-2">
+                                    <div className="w-12 h-12 bg-brand-accent/10 rounded-full flex items-center justify-center text-brand-accent shrink-0">
+                                        <span className="material-symbols-outlined text-[24px]">calendar_month</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-headline-sm text-headline-sm text-brand-dark">Schedule Your 15-Minute Audit</h3>
+                                        <p className="font-body-md text-body-md text-brand-gray-text">Select a time that works best for you to speak with our automation team.</p>
+                                    </div>
+                                </div>
+                                
+                                {/* Live Calendly Embed */}
+                                <div className="w-full overflow-hidden rounded-xl border border-brand-border bg-white" style={{ height: '680px' }}>
+                                    <iframe 
+                                        src="https://calendly.com/ecomauto_ai/30min?hide_landing_page_details=1&hide_gdpr_banner=1" 
+                                        width="100%" 
+                                        height="100%" 
+                                        frameBorder="0"
+                                        title="Calendly Scheduler"
+                                        className="w-full h-full"
+                                    ></iframe>
+                                </div>
                             </div>
-                            <div>
-                                <h3 className="font-headline-sm text-headline-sm text-brand-dark mb-2">Schedule a Meeting</h3>
-                                <p className="font-body-md text-body-md text-brand-gray-text mb-6">
-                                    Book a 15-minute free discovery call to discuss your ecommerce workflow bottlenecks.
-                                </p>
-                            </div>
-                            <a href="https://calendly.com/ecomauto_ai/30min" className="btn-primary w-full shadow-[0_4px_15px_rgba(229,62,62,0.2)] hover:shadow-[0_8px_25px_rgba(229,62,62,0.3)] transition-all duration-300">
-                                Schedule a meeting
-                            </a>
-                        </div>
-                    </ScrollReveal>
+                        </ScrollReveal>
+                    </div>
 
-                    {/* Email Us Card */}
-                    <ScrollReveal delay={300}>
-                        <div className="minimal-card p-8 flex flex-col items-center text-center gap-6 hover:shadow-[0_20px_45px_rgba(0,0,0,0.04)] hover:-translate-y-1.5 hover:scale-[1.02] border border-transparent hover:border-brand-accent/20 transition-all duration-300">
-                            <div className="w-20 h-20 bg-brand-accent/10 rounded-full flex items-center justify-center text-brand-accent mb-2">
-                                <span className="material-symbols-outlined text-[40px]">mail</span>
+                    {/* Sidebar container */}
+                    <div className="lg:col-span-4 flex flex-col gap-6 w-full">
+                        {/* Email Us Card */}
+                        <ScrollReveal delay={300}>
+                            <div className="minimal-card p-6 flex flex-col gap-6 hover:shadow-[0_20px_45px_rgba(0,0,0,0.02)] border border-brand-border/40 transition-all duration-300 h-full justify-between">
+                                <div className="flex flex-col gap-4">
+                                    <div className="w-12 h-12 bg-brand-accent/10 rounded-full flex items-center justify-center text-brand-accent shrink-0">
+                                        <span className="material-symbols-outlined text-[24px]">mail</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="font-headline-sm text-headline-sm text-brand-dark mb-1">Prefer Email?</h3>
+                                        <p className="font-body-md text-body-md text-brand-gray-text">
+                                            Send us an email with your requirements and we'll reply within 24 hours.
+                                        </p>
+                                    </div>
+                                </div>
+                                <a href="mailto:hello@ecomauto.agency" className="btn-secondary w-full text-center border-2 border-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-300 py-3 rounded-full font-label-md">
+                                    hello@ecomauto.agency
+                                </a>
                             </div>
-                            <div>
-                                <h3 className="font-headline-sm text-headline-sm text-brand-dark mb-2">Email Us</h3>
-                                <p className="font-body-md text-body-md text-brand-gray-text mb-6">
-                                    Prefer writing? Send us an email with your requirements and we'll get back to you within 24 hours.
-                                </p>
+                        </ScrollReveal>
+
+                        {/* What to expect card */}
+                        <ScrollReveal delay={450}>
+                            <div className="minimal-card p-6 flex flex-col gap-4 border border-brand-border/40 bg-surface-container-lowest">
+                                <h4 className="font-headline-xs text-headline-xs text-brand-dark font-bold">What's in the free audit?</h4>
+                                <ul className="flex flex-col gap-3">
+                                    <li className="flex gap-3 items-start font-body-md text-brand-gray-text">
+                                        <span className="material-symbols-outlined text-brand-accent text-sm mt-1 shrink-0">check_circle</span>
+                                        Workflow bottleneck review
+                                    </li>
+                                    <li className="flex gap-3 items-start font-body-md text-brand-gray-text">
+                                        <span className="material-symbols-outlined text-brand-accent text-sm mt-1 shrink-0">check_circle</span>
+                                        Custom automation blueprint
+                                    </li>
+                                    <li className="flex gap-3 items-start font-body-md text-brand-gray-text">
+                                        <span className="material-symbols-outlined text-brand-accent text-sm mt-1 shrink-0">check_circle</span>
+                                        Savings estimation calculation
+                                    </li>
+                                </ul>
                             </div>
-                            <a href="mailto:hello@ecomauto.agency" className="btn-secondary w-full border-2 border-brand-dark hover:bg-brand-dark hover:text-white transition-all duration-300">
-                                hello@ecomauto.agency
-                            </a>
-                        </div>
-                    </ScrollReveal>
+                        </ScrollReveal>
+                    </div>
                 </div>
             </div>
         </section>

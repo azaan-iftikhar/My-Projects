@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const icons = [
   { name: 'N8N', src: '/assets/n8n-color.svg' },
@@ -45,9 +46,9 @@ const Hero = () => {
           Custom AI workflows for email, product hunting, comments, posting, chatbots, and web dev. Built for Amazon, eBay, and DTC sellers.
         </p>
         <div className="mt-6 mb-12">
-          <a className="btn-primary font-label-md text-label-md px-10 h-[60px] md:px-12 md:h-[64px] rounded-full text-lg shadow-[0_8px_25px_rgba(229,62,62,0.3)] hover:shadow-[0_12px_35px_rgba(229,62,62,0.4)] transition-all duration-300" href="#">
+          <Link className="btn-primary inline-flex items-center justify-center font-label-md text-label-md px-10 h-[60px] md:px-12 md:h-[64px] rounded-full text-lg shadow-[0_8px_25px_rgba(229,62,62,0.3)] hover:shadow-[0_12px_35px_rgba(229,62,62,0.4)] transition-all duration-300" to="/contact">
             15 Minute Free Audit
-          </a>
+          </Link>
         </div>
       </div>
 
