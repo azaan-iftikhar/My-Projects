@@ -2,24 +2,8 @@ import React, { useState } from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const serviceData = {
-    scraping: {
-        title: "Data Extraction / Scraping Automation",
-        visuals: (
-            <>
-                <img alt="Amazon" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -top-2 -left-2 z-10 bg-white object-contain p-3.5 zoomable-image" src="/assets/amazon-color.svg"/>
-                <img alt="eBay" className="absolute w-20 h-20 rounded-2xl shadow-lg border border-brand-border/30 z-20 bg-white object-contain p-4 zoomable-image" src="/assets/ebay-color.svg"/>
-                <img alt="Etsy" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -bottom-2 -right-2 z-30 bg-white object-contain p-3.5 zoomable-image" src="/assets/etsy-color.svg"/>
-            </>
-        ),
-        desc: "Extract competitor pricing and stock data in real-time.",
-        features: [
-            "Competitor prices scraped automatically in 5 minutes with 90% accuracy. No more all-day manual work in Jungle Scout or Helium 10.",
-            "High-margin products sourced and alerts sent straight to you on WhatsApp.",
-            "Customer comments replied instantly — no more copy-pasting the same answer 100 times."
-        ]
-    },
-    comments: {
-        title: "Auto Social Comment Replies",
+    lead_gen: {
+        title: "Lead Generation & Communication Automation",
         visuals: (
             <>
                 <img alt="Pinterest" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -top-2 -left-2 z-10 bg-white object-contain p-3.5 zoomable-image" src="/assets/pinterest-color.svg"/>
@@ -27,33 +11,50 @@ const serviceData = {
                 <img alt="Facebook" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -bottom-2 -right-2 z-30 bg-white object-contain p-3.5 zoomable-image" src="/assets/facebook-color.svg"/>
             </>
         ),
-        desc: "Drive engagement and conversions with instant, intelligent replies to customer queries.",
+        desc: "Automate your client acquisition and customer engagement channels to run 24/7 without manual intervention.",
         features: [
-            "Respond to customer questions on Instagram and Facebook in under 2 minutes.",
-            "Convert comments into leads by automatically sending DM product links.",
-            "Filter and prioritize high-intent customer inquiries for your sales team."
+            "Cold Emails Automation: Send highly personalized cold outreach campaigns to hundreds of leads daily, complete with automated follow-ups.",
+            "Email Marketing Automation: Target cart abandonment, welcome journeys, and promotional sequences based on real-time customer behavior.",
+            "Social Media Comment Replies: Instantly reply to public comments on Facebook and Instagram and route buying inquiries to direct messages.",
+            "Automated Chatbots on Website: Qualify leads and answer customer inquiries on your website instantly with intelligent conversational flows."
         ]
     },
-    email: {
-        title: "Email Marketing Automation",
+    content_data: {
+        title: "Content & Data Management",
+        visuals: (
+            <>
+                <img alt="Amazon" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -top-2 -left-2 z-10 bg-white object-contain p-3.5 zoomable-image" src="/assets/amazon-color.svg"/>
+                <img alt="eBay" className="absolute w-20 h-20 rounded-2xl shadow-lg border border-brand-border/30 z-20 bg-white object-contain p-4 zoomable-image" src="/assets/ebay-color.svg"/>
+                <img alt="Etsy" className="absolute w-16 h-16 rounded-xl shadow-md border border-brand-border/30 -bottom-2 -right-2 z-30 bg-white object-contain p-3.5 zoomable-image" src="/assets/etsy-color.svg"/>
+            </>
+        ),
+        desc: "Keep your store catalogs, pricing, competitor intelligence, and copywriting perfectly synchronized and updated.",
+        features: [
+            "Automated Product Description Writer: Generate high-converting, SEO-optimized product copy in bulk utilizing advanced LLMs.",
+            "Data Extraction & Scraping Automation: Collect competitor pricing, reviews, and stock updates automatically to maintain a market edge.",
+            "Automated Product Catalog Updates: Instantly sync inventory levels, prices, and new arrivals across all channels from a single data source."
+        ]
+    },
+    support_analytics: {
+        title: "Ecommerce Customer Support & Analytics",
         visuals: (
             <div className="w-20 h-20 bg-brand-accent rounded-full flex items-center justify-center text-white shadow-lg border-4 border-white z-20">
-                <span className="material-symbols-outlined text-[40px]">mail</span>
+                <span className="material-symbols-outlined text-[40px]">bar_chart</span>
             </div>
         ),
-        desc: "Scale your outreach with intelligent, personalized email sequences.",
+        desc: "Elevate customer satisfaction while extracting actionable business intelligence from your store's operations.",
         features: [
-            "Abandoned cart recovery emails sent automatically within 1 hour of exit.",
-            "Dynamic product recommendations based on user browsing history.",
-            "A/B testing on subject lines to maximize open rates by up to 40%."
+            "Automated Customer Support Ticketing: Classify, prioritize, and automatically reply to common customer queries using AI agent desks.",
+            "Automated Reporting & Analytics: Compile and email daily sales reports, campaign ROIs, and traffic dashboards straight to your inbox.",
+            "Automated Customer Feedback Review: Monitor product reviews and customer satisfaction scores, alerting your team of negative feedback."
         ]
     }
 };
 
 const Services = () => {
-  const [activeTab, setActiveTab] = useState('scraping');
+  const [activeTab, setActiveTab] = useState('lead_gen');
   const [animating, setAnimating] = useState(false);
-  const [displayData, setDisplayData] = useState(serviceData['scraping']);
+  const [displayData, setDisplayData] = useState(serviceData['lead_gen']);
 
   const handleTabChange = (tabId) => {
     if (tabId === activeTab || animating) return;
@@ -88,28 +89,28 @@ const Services = () => {
                             Swipe for more <span className="material-symbols-outlined text-xs">arrow_forward_ios</span>
                         </span>
                     </div>
-
+ 
                     {/* Horizontal scrolling tabs on mobile, vertical sidebar list on desktop */}
                     <div className="flex flex-row lg:flex-col gap-2 relative overflow-x-auto lg:overflow-visible border-b lg:border-b-0 border-brand-border pb-2 lg:pb-0 scrollbar-none">
                         {/* Background line indicator: horizontal on mobile (hidden), vertical on desktop */}
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-surface-container-low rounded-full hidden lg:block"></div>
                     
-                        <button onClick={() => handleTabChange('scraping')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'scraping' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'scraping' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
-                            <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'scraping' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Data Extraction / Scraping</h4>
-                            <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Real-time competitor & stock data</p>
+                        <button onClick={() => handleTabChange('lead_gen')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'lead_gen' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'lead_gen' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
+                            <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'lead_gen' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Lead Generation & Communication</h4>
+                            <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Cold email, social outreach & chatbots</p>
                         </button>
 
-                        <button onClick={() => handleTabChange('comments')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'comments' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'comments' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
-                            <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'comments' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Auto Comment Replies</h4>
-                            <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Instant customer engagement</p>
+                        <button onClick={() => handleTabChange('content_data')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'content_data' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'content_data' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
+                            <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'content_data' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Content & Data Management</h4>
+                            <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Catalogs, descriptions & data scraping</p>
                         </button>
 
-                        <button onClick={() => handleTabChange('email')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'email' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
-                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'email' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
-                            <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'email' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Email Marketing Automation</h4>
-                            <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Personalized outreach at scale</p>
+                        <button onClick={() => handleTabChange('support_analytics')} className={`shrink-0 w-auto lg:w-full text-left px-4 py-4 lg:pl-8 lg:py-6 relative cursor-pointer group transition-all duration-300 ${activeTab === 'support_analytics' ? 'opacity-100' : 'opacity-60 hover:opacity-100'}`}>
+                            <div className={`absolute bottom-0 left-0 right-0 h-1 lg:top-0 lg:bottom-0 lg:h-full lg:right-auto lg:w-1 rounded-full transition-colors ${activeTab === 'support_analytics' ? 'bg-brand-accent shadow-[0_0_8px_rgba(229,62,62,0.6)]' : 'bg-transparent'}`}></div>
+                            <h4 className={`font-headline-sm text-headline-sm mb-1 transition-colors ${activeTab === 'support_analytics' ? 'text-brand-accent' : 'text-brand-dark group-hover:text-brand-accent'}`}>Support & Analytics</h4>
+                            <p className="font-body-md text-body-md text-brand-gray-text hidden lg:block">Ticketing, feedback & dynamic reports</p>
                         </button>
                     </div>
                 </ScrollReveal>
@@ -132,7 +133,7 @@ const Services = () => {
                             <div className="flex flex-col gap-6">
                                 {displayData.features.map((feature, idx) => (
                                     <div key={idx} className="flex gap-4 items-start">
-                                        <span className="material-symbols-outlined text-brand-accent mt-0.5">check_circle</span>
+                                        <span className="material-symbols-outlined text-brand-accent mt-0.5 select-none">check_circle</span>
                                         <p className="font-body-md text-body-md text-brand-dark leading-relaxed">{feature}</p>
                                     </div>
                                 ))}

@@ -119,6 +119,37 @@ const glimpseData = {
                 </div>
             </>
         )
+    },
+    product_description: {
+        title: "Automated Product Description Writer — Google Sheets + OpenAI",
+        desc: "100 product descriptions written in one run, fully SEO-optimised. No copywriter, no prompting, no copy-pasting — just add your product and the description is ready.",
+        howItWorksIntro: "",
+        steps: [
+            "Connects to your Google Sheet and reads every new product you add — Name, Category, Key Features, and any notes you include",
+            "Skips products that already have descriptions so nothing gets overwritten or processed twice",
+            "Sends each product to Claude with a pre-built SEO prompt tuned for conversion — no prompt engineering needed on your end",
+            "Writes unique, keyword-rich descriptions for each product automatically, one by one",
+            "Pastes the finished description directly back into the sheet against the right product row",
+            "100 products done in a single run — that's 8 to 12 hours of work gone and no need for a $500/month copywriter, for under $30/month in running costs"
+        ],
+        visuals: (
+            <>
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">settings_input_component</span>
+                        Automation Workflow
+                    </div>
+                    <img alt="Product Description Writer Automation Workflow" className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/product_description_workflow.png"/>
+                </div>
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">table_chart</span>
+                        Result / Output Sheet
+                    </div>
+                    <img alt="Product Description Writer Output Sheet" className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/product_description_result.png"/>
+                </div>
+            </>
+        )
     }
 };
 
@@ -152,9 +183,10 @@ const Glimpse = () => {
                         <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none sm:hidden"></div>
                         <div className="flex overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-3 sm:gap-4 mb-16 pb-4 sm:pb-0 scrollbar-none snap-x w-full px-2 sm:px-0">
                             <button onClick={() => handleTabChange('scraping')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'scraping' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Data Extracting / Scraping</button>
+                            <button onClick={() => handleTabChange('cold_email')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'cold_email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Cold Email Automation</button>
+                            <button onClick={() => handleTabChange('product_description')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'product_description' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Automated Product Description Writer</button>
                             <button onClick={() => handleTabChange('social')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'social' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Auto Social Media Comment Replies</button>
                             <button onClick={() => handleTabChange('email')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Email Marketing Automation</button>
-                            <button onClick={() => handleTabChange('cold_email')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'cold_email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Cold Email Automation</button>
                         </div>
                     </div>
                 </ScrollReveal>
