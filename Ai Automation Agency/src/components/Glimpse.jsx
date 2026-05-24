@@ -150,6 +150,36 @@ const glimpseData = {
                 </div>
             </>
         )
+    },
+    chatbot: {
+        title: "Integrated Website Chatbot — Portfolio Page AI Assistant",
+        desc: "Engage website visitors instantly with an intelligent AI chatbot trained on your company profile, services, and portfolio. Turn passive traffic into qualified leads 24/7.",
+        howItWorksIntro: "",
+        steps: [
+            "Loads your business details, portfolio case studies, and service offerings into the AI context model",
+            "Initiates real-time chat with website visitors, answering questions about pricing, tech stack, and booking",
+            "Intelligently qualifies leads by collecting their name, email, and specific project requirements in the chat",
+            "Saves and syncs qualified leads directly to your central CRM database and triggers instant email alerts",
+            "Operates 24/7 to provide immediate help when your team is offline, boosting conversion rates by up to 35%"
+        ],
+        visuals: (
+            <>
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">web</span>
+                        Standard Website Page
+                    </div>
+                    <img alt="Website Portfolio Page" className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/portfolio_page.png"/>
+                </div>
+                <div className="minimal-card p-4 bg-surface-container-low">
+                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
+                        <span className="material-symbols-outlined text-[16px]">chat</span>
+                        Website with Active AI Chatbot
+                    </div>
+                    <img alt="Website Portfolio Page with Chatbot" className="w-full h-auto rounded border border-brand-border object-cover aspect-[1.75] zoomable-image" src="/assets/portfolio_page_with_chatbot.png"/>
+                </div>
+            </>
+        )
     }
 };
 
@@ -185,6 +215,7 @@ const Glimpse = () => {
                             <button onClick={() => handleTabChange('scraping')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'scraping' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Data Extracting / Scraping</button>
                             <button onClick={() => handleTabChange('cold_email')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'cold_email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Cold Email Automation</button>
                             <button onClick={() => handleTabChange('product_description')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'product_description' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Automated Product Description Writer</button>
+                            <button onClick={() => handleTabChange('chatbot')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'chatbot' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Integrated Website Chatbot</button>
                             <button onClick={() => handleTabChange('social')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'social' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Auto Social Media Comment Replies</button>
                             <button onClick={() => handleTabChange('email')} className={`shrink-0 snap-center px-6 py-2 rounded-full font-label-md text-label-md transition-colors glimpse-tab-btn ${activeTab === 'email' ? 'pill-nav-active' : 'pill-nav-inactive hover:bg-surface-container-low'}`}>Email Marketing Automation</button>
                         </div>
