@@ -8,6 +8,7 @@ Extracted from an AI-generated layout and structured into modular, scalable Reac
 - Interactive custom UI components (Orbit animations, Tab switches).
 - Highly modular React code structure (`Hero`, `Services`, `Glimpse`, `Footer`).
 - Custom design tokens baked directly into the theme configuration.
+- **Cold Email Automation Showcase**: Displays the automated cold email pipeline combining Google Sheets + Gmail.
 
 ## Folder Structure
 ```

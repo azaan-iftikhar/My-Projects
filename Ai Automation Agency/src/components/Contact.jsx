@@ -29,16 +29,44 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 
-                                {/* Live Calendly Embed */}
-                                <div className="w-full overflow-hidden rounded-xl border border-brand-border bg-white" style={{ height: '680px' }}>
-                                    <iframe 
-                                        src="https://calendly.com/ecomauto_ai/30min?hide_landing_page_details=1&hide_gdpr_banner=1" 
-                                        width="100%" 
-                                        height="100%" 
-                                        frameBorder="0"
-                                        title="Calendly Scheduler"
-                                        className="w-full h-full"
-                                    ></iframe>
+                                {/* Static Contact Form (Replaces broken Calendly) */}
+                                <div className="w-full mt-4">
+                                    <form className="w-full flex flex-col gap-4 bg-white rounded-xl">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <div className="flex flex-col gap-1.5">
+                                                <label className="font-label-sm text-label-sm text-brand-dark uppercase tracking-wider">First Name</label>
+                                                <input type="text" placeholder="John" className="w-full px-4 py-3 rounded border border-brand-border bg-surface-bright focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all font-body-md text-brand-dark placeholder-brand-gray-text/50" required />
+                                            </div>
+                                            <div className="flex flex-col gap-1.5">
+                                                <label className="font-label-sm text-label-sm text-brand-dark uppercase tracking-wider">Last Name</label>
+                                                <input type="text" placeholder="Doe" className="w-full px-4 py-3 rounded border border-brand-border bg-surface-bright focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all font-body-md text-brand-dark placeholder-brand-gray-text/50" required />
+                                            </div>
+                                        </div>
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="font-label-sm text-label-sm text-brand-dark uppercase tracking-wider">Email Address</label>
+                                            <input type="email" placeholder="john@company.com" className="w-full px-4 py-3 rounded border border-brand-border bg-surface-bright focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all font-body-md text-brand-dark placeholder-brand-gray-text/50" required />
+                                        </div>
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="font-label-sm text-label-sm text-brand-dark uppercase tracking-wider">Website URL</label>
+                                            <input type="url" placeholder="https://yourcompany.com" className="w-full px-4 py-3 rounded border border-brand-border bg-surface-bright focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all font-body-md text-brand-dark placeholder-brand-gray-text/50" />
+                                        </div>
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="font-label-sm text-label-sm text-brand-dark uppercase tracking-wider">Biggest Bottleneck?</label>
+                                            <select className="w-full px-4 py-3 rounded border border-brand-border bg-surface-bright focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all font-body-md text-brand-dark">
+                                                <option>Lead Generation & Outreach</option>
+                                                <option>Customer Support & Comment Replies</option>
+                                                <option>Data Scraping & Competitor Tracking</option>
+                                                <option>Other / Not Sure</option>
+                                            </select>
+                                        </div>
+                                        <div className="flex flex-col gap-1.5">
+                                            <label className="font-label-sm text-label-sm text-brand-dark uppercase tracking-wider">Additional Details</label>
+                                            <textarea rows="4" placeholder="Tell us a bit more about your workflow..." className="w-full px-4 py-3 rounded border border-brand-border bg-surface-bright focus:outline-none focus:border-brand-accent focus:ring-2 focus:ring-brand-accent/20 transition-all font-body-md text-brand-dark placeholder-brand-gray-text/50 resize-y"></textarea>
+                                        </div>
+                                        <button type="button" className="btn-primary w-full mt-2 rounded hover:shadow-lg transition-shadow">
+                                            Request Free Audit
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </ScrollReveal>
