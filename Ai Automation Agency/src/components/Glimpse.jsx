@@ -45,34 +45,6 @@ const glimpseData = {
             { icon: "table_chart", label: "Result / Output Sheet", src: "/assets/output_of_automation.jpeg", alt: "Ecommerce Automation Output Sheet" }
         ]
     },
-    social: {
-        title: "Intelligent Social Media Moderation",
-        desc: "Automatically filter, categorize, and respond to comments across all your social channels. Our AI understands sentiment and context, ensuring your brand voice remains consistent while saving your team hours of manual work.",
-        steps: [
-            "Tracks and monitors customer comments across Instagram & Facebook 24/7",
-            "Instantly responds to product questions in under 2 minutes using context-aware AI",
-            "Delivers direct purchase and product links via automated DM to drive conversions",
-            "Filters spam and automatically alerts your sales team of high-intent buying inquiries"
-        ],
-        visuals: [
-            { icon: "forum", label: "Automation Dashboard", src: "/assets/product_hunting.jpeg", alt: "Dashboard showing social media analytics and auto-replies." },
-            { icon: "chat", label: "Auto Comment Reply Demo", src: "/assets/output_of_automation.jpeg", alt: "Social Media Auto Comment Reply Output" }
-        ]
-    },
-    email: {
-        title: "Automated Email Sequences",
-        desc: "Set up complex, multi-step email journeys that react to customer behavior in real-time. From welcome series to sophisticated cart abandonment flows, let the automation do the heavy lifting for your marketing team.",
-        steps: [
-            "Detects cart abandonment instantly and triggers recovery email flows within 1 hour",
-            "Injects personalized, dynamic product recommendations tailored to buyers' interests",
-            "Runs automated A/B tests on subject lines to continuously optimize open & click-through rates",
-            "Synchronizes customer preferences and purchase behaviors directly into your CRM database"
-        ],
-        visuals: [
-            { icon: "mail", label: "Email Sequence Builder", src: "/assets/output_of_automation.jpeg", alt: "Email sequence builder interface." },
-            { icon: "analytics", label: "Email Analytics Dashboard", src: "/assets/product_hunting.jpeg", alt: "Email Sequence Analytics Output" }
-        ]
-    },
     cold_email: {
         title: "Automated Cold Email System — Google Sheets + Gmail",
         desc: "500 leads emailed in under 10 minutes with zero manual effort. No more copy-pasting contacts, missing follow-ups, or accidentally emailing the same person twice.",
@@ -128,8 +100,6 @@ const tabs = [
     { id: 'cold_email',           label: 'Cold Email Automation' },
     { id: 'product_description',  label: 'Automated Product Description Writer' },
     { id: 'chatbot',              label: 'Integrated Website Chatbot' },
-    { id: 'social',               label: 'Auto Social Media Comment Replies' },
-    { id: 'email',                label: 'Email Marketing Automation' },
 ];
 
 // ─── Glimpse Component ────────────────────────────────────────────────────────
