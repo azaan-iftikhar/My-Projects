@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -9,13 +10,15 @@ const Footer = () => {
                     <p className="text-secondary mb-4">© 2024 Ecommerce Automation Agency. All rights reserved.</p>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="#">Quick Links</a>
-                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="#">Privacy Policy</a>
-                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="#">Terms of Service</a>
+                    <span className="font-bold text-on-surface mb-1">Navigation</span>
+                    <Link className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" to="/">Home</Link>
+                    <Link className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" to="/about">About Us</Link>
+                    <Link className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" to="/contact">Contact Us</Link>
                 </div>
                 <div className="flex flex-col gap-3">
-                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="#">Social Media</a>
-                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="#">Contact Info</a>
+                    <span className="font-bold text-on-surface mb-1">Connect</span>
+                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="https://linkedin.com">LinkedIn</a>
+                    <a className="text-secondary hover:text-brand-accent transition-colors focus:ring-2 focus:ring-brand-accent w-fit" href="https://github.com">GitHub</a>
                 </div>
             </div>
         </footer>

@@ -20,6 +20,7 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex items-center space-x-8">
             <Link className={isActive("/")} to="/">HOME</Link>
+            <Link className={isActive("/about")} to="/about">ABOUT US</Link>
             <Link className={isActive("/contact")} to="/contact">CONTACT US</Link>
         </div>
         <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="md:hidden text-on-surface p-2 focus:outline-none">
@@ -31,6 +32,7 @@ const Navbar = () => {
       <div className={`md:hidden absolute w-full bg-surface border-b border-outline-variant transition-all duration-300 overflow-hidden shadow-lg ${isMobileMenuOpen ? 'max-h-64 border-opacity-100' : 'max-h-0 border-opacity-0'}`}>
           <div className="flex flex-col items-center py-6 gap-6">
               <Link onClick={() => setIsMobileMenuOpen(false)} className={isActive("/")} to="/">HOME</Link>
+              <Link onClick={() => setIsMobileMenuOpen(false)} className={isActive("/about")} to="/about">ABOUT US</Link>
               <Link onClick={() => setIsMobileMenuOpen(false)} className={isActive("/contact")} to="/contact">CONTACT US</Link>
           </div>
       </div>
