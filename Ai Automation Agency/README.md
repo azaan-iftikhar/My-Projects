@@ -4,11 +4,13 @@ A beautiful, high-converting React-based landing page for an Ecommerce Automatio
 Extracted from an AI-generated layout and structured into modular, scalable React components.
 
 ## Features
-- Fully responsive design using Tailwind CSS.
-- Interactive custom UI components (Orbit animations, Tab switches).
-- Highly modular React code structure (`Hero`, `Services`, `Glimpse`, `Footer`).
-- Custom design tokens baked directly into the theme configuration.
+- **Integrated Website Chatbot**: An interactive portfolio page AI assistant designed to engage visitors, answer FAQs, and capture qualified leads 24/7.
 - **Cold Email Automation Showcase**: Displays the automated cold email pipeline combining Google Sheets + Gmail.
+- **Amazon Product Hunting**: Automated scraping, profitability scoring, and sorting of competitor products.
+- **Auto Social Media Replies**: Context-aware comment moderation and automated direct message (DM) sales routing.
+- **Email Marketing Journeys**: Multi-step lifecycle email workflows synchronized directly with CRM tools.
+- **Premium Responsive Design**: Mobile-first design using Tailwind CSS, featuring sleek gradients, smooth transitions, and ScrollReveal micro-animations.
+- **Modular Components**: Clean React architecture structured into specialized folders (e.g. `Navbar`, `Hero`, `Services`, `Glimpse`, `Footer`).
 
 ## Folder Structure
 ```
