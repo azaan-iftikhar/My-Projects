@@ -5,40 +5,87 @@ import ScrollReveal from './ScrollReveal';
 const teamData = [
   {
     id: 1,
-    name: "Azaan Iftikhar",
-    role: "CEO & Founder",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=600",
-    bio: "Visionary strategist leading ECOM-AUTO's expansion. Architect of core custom automation frameworks for top-tier DTC and Amazon storefronts."
+    name: "Fawad",
+    role: "Product & Customer Automation Specialist",
+    image: "/assets/fawad-face-image.jpeg",
+    bio: "Pioneers customer journey automation. Integrates customized AI agents and automated support pipelines to streamline operations and enhance retention."
   },
   {
     id: 2,
-    name: "Sarah Jenkins",
-    role: "CTO & Lead Architect",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=600&h=600",
-    bio: "Pioneering distributed cloud systems and AI agents. Ensures ECOM-AUTO workflows run with 99.9% uptime at scale."
-  },
-  {
-    id: 3,
-    name: "David Chen",
-    role: "Head of AI Integrations",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=600&h=600",
-    bio: "Large Language Model tuning expert. Designs advanced custom product description engines and website chatbot systems."
-  },
-  {
-    id: 4,
-    name: "Elena Rostova",
-    role: "Senior Automation Engineer",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=600&h=600",
-    bio: "Master of workflow orchestration. Specializes in building headless scraping scripts, API connections, and cross-channel database synching."
-  },
-  {
-    id: 5,
-    name: "Marcus Vance",
-    role: "Product & Operations Manager",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=600",
-    bio: "Ensures seamless automation handoffs. Bridges client e-commerce goals with technical workflow pipelines for fast, high-ROI deployment."
+    name: "Iqra Iqbal",
+    role: "Email Marketing Automation Specialist",
+    image: "/assets/iqra-iqbal-face-image.jpeg",
+    bio: "Turns manual e-commerce marketing workflows into automated revenue systems. Expert in building cold outreach pipelines and high-converting CRM integrations."
   }
 ];
+
+// Helper to render formatting and bullet lists dynamically in team bios
+const renderBio = (bio) => {
+  const hasList = bio.includes('\n-') || bio.startsWith('-');
+  if (!hasList) {
+    return (
+      <p className="font-body-md text-body-md text-brand-gray-text leading-relaxed flex-grow text-center">
+        {bio}
+      </p>
+    );
+  }
+
+  const parts = [];
+  const lines = bio.split('\n');
+  let currentList = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) {
+      continue;
+    }
+
+    if (line.startsWith('-')) {
+      if (!currentList) {
+        currentList = [];
+        parts.push({ type: 'list', items: currentList });
+      }
+
+      const content = line.substring(1).trim();
+      const boldMatch = content.match(/^\*([^*]+)\*:(.*)$/) || content.match(/^_(.*)_:(.*)$/) || content.match(/^([^:]+):(.*)$/);
+      if (boldMatch) {
+        currentList.push(
+          <span key={i}>
+            <strong>{boldMatch[1].trim()}:</strong>{boldMatch[2]}
+          </span>
+        );
+      } else {
+        currentList.push(<span key={i}>{content}</span>);
+      }
+    } else {
+      currentList = null;
+      parts.push({ type: 'paragraph', text: line });
+    }
+  }
+
+  return (
+    <div className="font-body-sm text-body-sm text-brand-gray-text leading-relaxed text-left flex-grow space-y-3 mt-3">
+      {parts.map((part, idx) => {
+        if (part.type === 'list') {
+          return (
+            <ul key={idx} className="list-disc pl-4 space-y-2">
+              {part.items.map((item, itemIdx) => (
+                <li key={itemIdx} className="text-left text-brand-gray-text">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        return (
+          <p key={idx} className="text-left text-brand-gray-text font-semibold">
+            {part.text}
+          </p>
+        );
+      })}
+    </div>
+  );
+};
 
 const About = () => {
   // Store loading states for individual images to display a premium shimmer effect
@@ -51,7 +98,7 @@ const About = () => {
   return (
     <section className="w-full bg-surface-bright py-section-padding-sm md:py-section-padding-lg flex flex-col justify-center">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-gutter w-full">
-        
+
         {/* Goal/Mission Section */}
         <ScrollReveal>
           <div className="max-w-3xl mx-auto text-center mb-16 md:mb-24">
@@ -63,7 +110,7 @@ const About = () => {
             </h2>
             <div className="w-16 h-1 bg-brand-accent mx-auto mb-8 rounded-full"></div>
             <p className="font-body-lg text-body-lg text-brand-gray-text leading-relaxed">
-              At ECOM-AUTO, our goal is to eliminate repetitive manual processes for modern digital sellers. 
+              At ECOM-AUTO, our goal is to eliminate repetitive manual processes for modern digital sellers.
               We build high-performance AI systems, scraping agents, and automated lead qualifiers so your team can focus exclusively on growth, product excellence, and brand expansion.
             </p>
           </div>
@@ -73,7 +120,7 @@ const About = () => {
         <ScrollReveal delay={100}>
           <div className="text-center mb-12">
             <h3 className="font-headline-md text-headline-md text-brand-dark mb-3">
-              Meet The Innovators
+              Meet Our Experts
             </h3>
             <p className="font-body-md text-body-md text-brand-gray-text">
               The experts behind our industry-leading custom e-commerce automation systems
@@ -82,20 +129,23 @@ const About = () => {
         </ScrollReveal>
 
         {/* Team Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-stretch justify-center">
+        <div className="flex flex-wrap gap-6 justify-center items-stretch">
           {teamData.map((member, idx) => (
-            <ScrollReveal key={member.id} delay={150 + idx * 50}>
-              <div className="minimal-card h-full flex flex-col p-6 text-center transition-all duration-300 hover:scale-[1.03] hover:border-brand-accent hover:shadow-[0_20px_45px_rgba(0,0,0,0.03)] group">
-                
+            <ScrollReveal
+              key={member.id}
+              delay={150 + idx * 50}
+              className="w-full md:w-[calc(50%-12px)] max-w-sm flex"
+            >
+              <div className="minimal-card w-full h-full flex flex-col p-6 text-center transition-all duration-300 hover:scale-[1.03] hover:border-brand-accent hover:shadow-[0_20px_45px_rgba(0,0,0,0.03)] group">
+
                 {/* Image Frame with skeleton load shimmer */}
                 <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-2 border-brand-border group-hover:border-brand-accent transition-colors duration-300 bg-surface-container-low shrink-0">
                   <div className={`absolute inset-0 img-skeleton ${loadedImages[member.id] ? 'loaded' : ''}`} />
                   <img
                     src={member.image}
                     alt={member.name}
-                    className={`w-full h-full object-cover zoomable-image transition-opacity duration-300 ${
-                      loadedImages[member.id] ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`w-full h-full object-cover zoomable-image transition-opacity duration-300 ${loadedImages[member.id] ? 'opacity-100' : 'opacity-0'
+                      }`}
                     onLoad={() => handleImageLoad(member.id)}
                     loading="lazy"
                   />
@@ -108,9 +158,7 @@ const About = () => {
                 <p className="font-label-md text-label-md text-brand-accent uppercase tracking-wider mb-4 font-semibold">
                   {member.role}
                 </p>
-                <p className="font-body-md text-body-md text-brand-gray-text leading-relaxed flex-grow">
-                  {member.bio}
-                </p>
+                {renderBio(member.bio)}
 
                 {/* Micro-interactive social contact triggers */}
                 <div className="flex justify-center gap-3 mt-6 pt-4 border-t border-brand-border/60">
