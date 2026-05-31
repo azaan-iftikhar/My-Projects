@@ -91,6 +91,22 @@ const glimpseData = {
             { icon: "web", label: "Standard Website Page", src: "/assets/portfolio_page.png", alt: "Website Portfolio Page" },
             { icon: "chat", label: "Website with Active AI Chatbot", src: "/assets/portfolio_page_with_chatbot.png", alt: "Website Portfolio Page with Chatbot" }
         ]
+    },
+    lead_qualifier: {
+        title: "Automated Lead Qualifier System with Airtable & Make.com",
+        desc: "Leads qualified automatically every 15 minutes with zero manual effort. No more manually reviewing every submission or deciding who deserves a follow-up. With each run it checks the qualification status and routes leads instantly to the right team or action. Triggers every 15 minutes automatically — no one needs to start it",
+        steps: [
+            "Watches Airtable for new or updated records in the Lead Base including Company, Budget, and Qualification status",
+            "Routes each lead through a Router instantly based on their qualification — Qualified leads go one way, unqualified go another",
+            "Qualified leads trigger a Gmail email automatically sent to the prospect with zero manual writing",
+            "Updates the Airtable record after the email is sent so the team always knows what's been actioned",
+            "Unqualified leads get parsed through Text Parser to extract key details and a Slack message is sent to alert the team internally",
+            "Every lead is handled — qualified ones get emailed, unqualified ones get flagged on Slack — nothing falls through the cracks"
+        ],
+        visuals: [
+            { icon: "settings_input_component", label: "Automation Workflow", src: "/assets/make_lead_qualifier.jpeg", alt: "Automated Lead Qualifier System Workflow" },
+            { icon: "table_chart", label: "Result / Output Sheet", src: "/assets/make_lead_qualifier_output.jpeg", alt: "Automated Lead Qualifier System Output" }
+        ]
     }
 };
 
@@ -100,6 +116,7 @@ const tabs = [
     { id: 'cold_email',           label: 'Cold Email Automation' },
     { id: 'product_description',  label: 'Automated Product Description Writer' },
     { id: 'chatbot',              label: 'Integrated Website Chatbot' },
+    { id: 'lead_qualifier',       label: 'Automated Lead Qualifier' },
 ];
 
 // ─── Glimpse Component ────────────────────────────────────────────────────────
