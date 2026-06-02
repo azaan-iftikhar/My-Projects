@@ -110,7 +110,7 @@ const About = () => {
             </h2>
             <div className="w-16 h-1 bg-brand-accent mx-auto mb-8 rounded-full"></div>
             <p className="font-body-lg text-body-lg text-brand-gray-text leading-relaxed">
-              At ECOM-AUTO, our goal is to eliminate repetitive manual processes for modern digital sellers.
+              At Vendrix Automation, our goal is to eliminate repetitive manual processes for modern digital sellers.
               We build high-performance AI systems, scraping agents, and automated lead qualifiers so your team can focus exclusively on growth, product excellence, and brand expansion.
             </p>
           </div>

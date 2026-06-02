@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infinity Logo — Clean Version</title>
+  <meta name="description" content="A clean, symmetrical infinity symbol logo with no artifacts or blobs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <header class="page-header">
+    <span class="badge">✓ Fixed Logo</span>
+    <h1>Infinity Symbol — Clean Version</h1>
+    <p class="subtitle">Perfectly symmetrical · Consistent stroke · Zero artifacts</p>
+  </header>
+
+  <!-- ===== MAIN LOGO DISPLAY ===== -->
+  <main>
+
+    <!-- Before / After Comparison -->
+    <section class="comparison-section">
+      <div class="comparison-card broken">
+        <div class="card-label error-label">❌ Before — Broken</div>
+        <!-- Intentional broken version for comparison -->
+        <svg class="logo-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Broken infinity symbol with blob artifact">
+          <!-- Left loop -->
+          <path
+            d="M260 100 C260 60 220 30 175 30 C130 30 90 60 90 100 C90 140 130 170 175 170 C220 170 260 140 260 100"
+            stroke="#D92B2B" stroke-width="20" stroke-linecap="round" fill="none"
+          />
+          <!-- Right loop -->
+          <path
+            d="M260 100 C260 60 300 30 345 30 C390 30 430 60 430 100 C430 140 390 170 345 170 C300 170 260 140 260 100"
+            stroke="#D92B2B" stroke-width="20" stroke-linecap="round" fill="none"
+          />
+          <!-- Artificial blob artifact (simulates the original issue) -->
+          <ellipse cx="148" cy="42" rx="22" ry="14" fill="#D92B2B" transform="rotate(-20 148 42)" />
+          <circle cx="135" cy="52" r="10" fill="#D92B2B" />
+        </svg>
+        <p class="card-note">Blob artifact at top-left · Asymmetrical loops</p>
+      </div>
+
+      <div class="arrow-divider">→</div>
+
+      <div class="comparison-card fixed">
+        <div class="card-label success-label">✅ After — Fixed</div>
+        <!-- Clean, mathematically perfect infinity symbol -->
+        <svg id="mainLogo" class="logo-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Clean symmetrical infinity symbol logo">
+          <path
+            id="infinityPath"
+            d="M260,100
+               C260,55 225,22 175,22
+               C125,22 90,55 90,100
+               C90,145 125,178 175,178
+               C225,178 260,145 260,100
+               C260,55 295,22 345,22
+               C395,22 430,55 430,100
+               C430,145 395,178 345,178
+               C295,178 260,145 260,100 Z"
+            stroke="#D92B2B"
+            stroke-width="22"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            fill="none"
+          />
+        </svg>
+        <p class="card-note">Perfect symmetry · Clean stroke · No artifacts</p>
+      </div>
+    </section>
+
+    <!-- ===== FULL SHOWCASE ===== -->
+    <section class="showcase-section">
+      <h2>Logo Showcase</h2>
+      <div class="showcase-grid">
+
+        <!-- Light background variant -->
+        <div class="showcase-card bg-light">
+          <svg class="showcase-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Infinity logo on light background">
+            <path d="M260,100 C260,55 225,22 175,22 C125,22 90,55 90,100 C90,145 125,178 175,178 C225,178 260,145 260,100 C260,55 295,22 345,22 C395,22 430,55 430,100 C430,145 395,178 345,178 C295,178 260,145 260,100 Z"
+              stroke="#D92B2B" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span class="variant-label">Light Background</span>
+        </div>
+
+        <!-- Dark background variant -->
+        <div class="showcase-card bg-dark">
+          <svg class="showcase-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Infinity logo on dark background">
+            <path d="M260,100 C260,55 225,22 175,22 C125,22 90,55 90,100 C90,145 125,178 175,178 C225,178 260,145 260,100 C260,55 295,22 345,22 C395,22 430,55 430,100 C430,145 395,178 345,178 C295,178 260,145 260,100 Z"
+              stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span class="variant-label light-text">Dark Background</span>
+        </div>
+
+        <!-- Crimson solid fill variant -->
+        <div class="showcase-card bg-crimson">
+          <svg class="showcase-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Infinity logo filled on crimson background">
+            <path d="M260,100 C260,55 225,22 175,22 C125,22 90,55 90,100 C90,145 125,178 175,178 C225,178 260,145 260,100 C260,55 295,22 345,22 C395,22 430,55 430,100 C430,145 395,178 345,178 C295,178 260,145 260,100 Z"
+              stroke="#FFFFFF" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span class="variant-label light-text">Brand Color Background</span>
+        </div>
+
+        <!-- Minimal thin stroke variant -->
+        <div class="showcase-card bg-light">
+          <svg class="showcase-svg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Thin stroke infinity logo">
+            <path d="M260,100 C260,55 225,22 175,22 C125,22 90,55 90,100 C90,145 125,178 175,178 C225,178 260,145 260,100 C260,55 295,22 345,22 C395,22 430,55 430,100 C430,145 395,178 345,178 C295,178 260,145 260,100 Z"
+              stroke="#D92B2B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <span class="variant-label">Thin Stroke Variant</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== LIVE CUSTOMIZER ===== -->
+    <section class="customizer-section">
+      <h2>🎨 Live Customizer</h2>
+      <p class="customizer-desc">Adjust the logo in real time</p>
+
+      <div class="customizer-layout">
+
+        <!-- Preview -->
+        <div class="customizer-preview" id="previewBox">
+          <svg id="customSvg" viewBox="0 0 520 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Customizable infinity symbol">
+            <path
+              id="customPath"
+              d="M260,100 C260,55 225,22 175,22 C125,22 90,55 90,100 C90,145 125,178 175,178 C225,178 260,145 260,100 C260,55 295,22 345,22 C395,22 430,55 430,100 C430,145 395,178 345,178 C295,178 260,145 260,100 Z"
+              stroke="#D92B2B"
+              stroke-width="22"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+        <!-- Controls -->
+        <div class="customizer-controls">
+
+          <!-- Stroke color -->
+          <div class="control-group">
+            <label for="colorPicker" class="control-label">Stroke Color</label>
+            <div class="color-row">
+              <input type="color" id="colorPicker" value="#D92B2B" class="color-input" />
+              <span id="colorHex" class="hex-display">#D92B2B</span>
+            </div>
+            <!-- Preset swatches -->
+            <div class="swatch-row">
+              <button class="swatch" style="background:#D92B2B" data-color="#D92B2B" title="Crimson" aria-label="Crimson swatch"></button>
+              <button class="swatch" style="background:#1C1A18" data-color="#1C1A18" title="Near Black" aria-label="Near black swatch"></button>
+              <button class="swatch" style="background:#2A52A0" data-color="#2A52A0" title="Cobalt Blue" aria-label="Cobalt blue swatch"></button>
+              <button class="swatch" style="background:#2D7D46" data-color="#2D7D46" title="Forest Green" aria-label="Forest green swatch"></button>
+              <button class="swatch" style="background:#B8621A" data-color="#B8621A" title="Burnt Orange" aria-label="Burnt orange swatch"></button>
+              <button class="swatch" style="background:#7B2D8B" data-color="#7B2D8B" title="Deep Purple" aria-label="Deep purple swatch"></button>
+            </div>
+          </div>
+
+          <!-- Stroke width -->
+          <div class="control-group">
+            <label for="strokeSlider" class="control-label">
+              Stroke Width: <strong id="strokeVal">22</strong>px
+            </label>
+            <input type="range" id="strokeSlider" min="6" max="40" value="22" class="slider" />
+          </div>
+
+          <!-- Background color -->
+          <div class="control-group">
+            <label class="control-label">Background</label>
+            <div class="bg-options">
+              <button class="bg-btn active" id="bgLight" data-bg="#F5F4F2" data-stroke-suggest="#D92B2B">☀️ Light</button>
+              <button class="bg-btn" id="bgDark" data-bg="#1C1A18" data-stroke-suggest="#FFFFFF">🌙 Dark</button>
+              <button class="bg-btn" id="bgBrand" data-bg="#D92B2B" data-stroke-suggest="#FFFFFF">🔴 Brand</button>
+              <button class="bg-btn" id="bgTrans" data-bg="transparent" data-stroke-suggest="#D92B2B">⬜ None</button>
+            </div>
+          </div>
+
+          <!-- Download button -->
+          <button id="downloadSvg" class="download-btn">
+            ⬇ Download SVG
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="page-footer">
+    <p>Clean infinity logo · Mathematically precise · No artifacts</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
