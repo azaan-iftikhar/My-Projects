@@ -9,7 +9,7 @@ const Footer = () => {
                     {/* Vendrix Automation logo in footer */}
                     <div className="flex items-center gap-3 mb-1">
                         <svg width="46" height="28" viewBox="0 0 56 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M26 16 C23 10 17 5 11 5 C5 5 1 10 1 16 C1 22 5 27 11 27 C17 27 23 22 26 16 C29 10 35 5 42 5 C48 5 55 10 55 16 C55 22 48 27 42 27 C35 27 29 22 26 16 Z" stroke="#e53e3e" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                            <path d="M26 16 C23 10 17 5 11 5 C5 5 1 10 1 16 C1 22 5 27 11 27 C17 27 23 22 26 16 C29 10 35 5 42 5 C48 5 55 10 55 16 C55 22 48 27 42 27 C35 27 29 22 26 16 Z" stroke="#e53e3e" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
                         </svg>
                         <div className="flex flex-col leading-none">
                             <span className="text-[18px] font-extrabold tracking-tight text-on-surface">Vendrix</span>

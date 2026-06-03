@@ -17,9 +17,9 @@ const Navbar = () => {
       <div className="flex justify-between items-center w-full px-section-padding-sm lg:px-gutter max-w-container-max mx-auto h-20">
         {/* ── Vendrix Automation Inline SVG Logo ── */}
         <a href="/" className="flex items-center gap-3 select-none" aria-label="Vendrix Automation – Home">
-          {/* Infinity loop icon — single continuous path crossing at center, + hook curl */}
+          {/* Infinity loop icon — single continuous path crossing at center */}
           <svg width="56" height="32" viewBox="0 0 56 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            {/* Single continuous infinity path — crosses itself at center (26,16) */}
+            {/* Single continuous infinity path — crosses itself at center (28,16) */}
             <path
               d="M26 16 C23 10 17 5 11 5 C5 5 1 10 1 16 C1 22 5 27 11 27 C17 27 23 22 26 16 C29 10 35 5 42 5 C48 5 55 10 55 16 C55 22 48 27 42 27 C35 27 29 22 26 16 Z"
               stroke="#e53e3e" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" fill="none"
