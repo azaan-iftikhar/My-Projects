@@ -16,7 +16,7 @@ const Hero = () => {
 
 
   return (
-    <header className="relative w-full overflow-hidden bg-surface-container-lowest pt-section-padding-sm md:pt-section-padding-lg pb-12 flex flex-col items-center justify-between min-h-[80vh]">
+    <header className="relative w-full overflow-hidden bg-surface-container-lowest pt-section-padding-sm md:pt-section-padding-lg pb-12 flex flex-col items-center justify-between min-h-[70vh]">
 
       {/* Network Nodes SVG Background */}
       <div className="absolute inset-0 z-10 pointer-events-none flex items-center justify-center opacity-80 mix-blend-multiply">

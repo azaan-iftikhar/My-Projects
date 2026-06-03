@@ -7,7 +7,7 @@ const LazyImage = ({ src, alt, className }) => {
     const [loaded, setLoaded] = useState(false);
 
     return (
-        <div className="relative w-full overflow-hidden rounded" style={{ aspectRatio: '1.75' }}>
+        <div className="relative w-full overflow-hidden rounded max-h-[200px] lg:max-h-[280px]" style={{ aspectRatio: '1.5' }}>
             {/* Skeleton shimmer — visible until the real image loads */}
             {!loaded && (
                 <div className="absolute inset-0 img-skeleton rounded" aria-hidden="true" />
@@ -107,6 +107,23 @@ const glimpseData = {
             { icon: "settings_input_component", label: "Automation Workflow", src: "/assets/make_lead_qualifier.jpeg", alt: "Automated Lead Qualifier System Workflow" },
             { icon: "table_chart", label: "Result / Output Sheet", src: "/assets/make_lead_qualifier_output.jpeg", alt: "Automated Lead Qualifier System Output" }
         ]
+    },
+    cold_email_system: {
+        title: "Complete Cold Email System — 3 n8n Workflows Working Together",
+        desc: "A fully automated cold email pipeline built with 3 interconnected n8n workflows. Sends initial outreach, tracks every reply in real time, and follows up with non-responders — all hands-free. No leads slip through the cracks.",
+        steps: [
+            "Workflow 1 (Emails Sender) — Reads contacts from Google Sheets, filters out already-sent ones, loops through each with a delay, sends the initial cold email via Gmail, and marks the row as 'Sent'",
+            "Workflow 2 (Reply Tracker) — Monitors your Gmail inbox for incoming replies. When a reply lands, it looks up the sender in your sheet and automatically marks them as 'Replied'",
+            "Workflow 3 (Follow Up) — Runs on a daily schedule, filters for contacts who haven't responded, sends a follow-up email with a delay between each, and updates the sheet",
+            "All 3 workflows share the same Google Sheet as a single source of truth — status is always in sync",
+            "Built-in delays between sends protect your sender reputation and stay within Gmail's sending limits",
+            "Zero manual work — just add contacts to the sheet and the system handles outreach, tracking, and follow-ups automatically"
+        ],
+        visuals: [
+            { icon: "send", label: "Workflow 1 — Emails Sender", src: "/assets/workflow_3.jpeg", alt: "n8n Cold Email Sender Workflow" },
+            { icon: "mark_email_read", label: "Workflow 2 — Reply Tracker", src: "/assets/workflow_1.jpeg", alt: "n8n Reply Tracker Workflow" },
+            { icon: "forward_to_inbox", label: "Workflow 3 — Follow Up", src: "/assets/workflow_2.jpeg", alt: "n8n Follow Up Workflow" }
+        ]
     }
 };
 
@@ -117,6 +134,7 @@ const tabs = [
     { id: 'product_description',  label: 'Automated Product Description Writer' },
     { id: 'chatbot',              label: 'Integrated Website Chatbot' },
     { id: 'lead_qualifier',       label: 'Automated Lead Qualifier' },
+    { id: 'cold_email_system',    label: 'Cold Email System (3 Workflows)' },
 ];
 
 // ─── Glimpse Component ────────────────────────────────────────────────────────
@@ -169,7 +187,7 @@ const Glimpse = () => {
                 <ScrollReveal delay={100}>
                     <div className="relative w-full">
                         {/* Right fade gradient — hints at horizontal scroll on mobile */}
-                        <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none sm:hidden" />
+                        <div className="absolute right-0 top-0 bottom-4 w-12 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none md:hidden" />
                         <div className="flex overflow-x-auto sm:flex-wrap justify-start sm:justify-center gap-3 sm:gap-4 mb-16 pb-4 sm:pb-0 scrollbar-none snap-x w-full px-2 sm:px-0">
                             {tabs.map(tab => (
                                 <button
@@ -190,32 +208,14 @@ const Glimpse = () => {
 
                 <ScrollReveal delay={200}>
                     {/* fade-transition class enables GPU-composited opacity+transform animation */}
-                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-gutter items-center fade-transition ${contentClass}`}>
+                    <div className={`grid grid-cols-1 lg:grid-cols-2 gap-gutter items-start fade-transition ${contentClass}`}>
 
-                        {/* ── Left column: images ── */}
-                        <div className="flex flex-col gap-6">
-                            {displayData.visuals.map((visual, idx) => (
-                                <div key={idx} className="minimal-card p-4 bg-surface-container-low">
-                                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-3 flex items-center gap-1.5 select-none">
-                                        <span className="material-symbols-outlined text-[16px]">{visual.icon}</span>
-                                        {visual.label}
-                                    </div>
-                                    {/* LazyImage handles skeleton + lazy load + fade-in */}
-                                    <LazyImage
-                                        src={visual.src}
-                                        alt={visual.alt}
-                                        className="rounded border border-brand-border zoomable-image"
-                                    />
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* ── Right column: text ── */}
-                        <div className="flex flex-col gap-6 lg:pl-12">
+                        {/* ── Text column — shows FIRST on mobile, second on desktop ── */}
+                        <div className="flex flex-col gap-6 lg:pl-12 order-1 lg:order-2">
                             <h2 className="font-headline-sm text-headline-sm md:font-headline-md md:text-headline-md text-brand-dark">
                                 {displayData.title}
                             </h2>
-                            <p className="font-body-lg text-body-lg text-brand-gray-text max-w-lg mb-2">
+                            <p className="font-body-md text-body-md text-brand-gray-text max-w-2xl mb-2">
                                 {displayData.desc}
                             </p>
 
@@ -233,13 +233,31 @@ const Glimpse = () => {
                                             <span className="material-symbols-outlined text-brand-accent text-[18px] mt-0.5 select-none font-bold">
                                                 arrow_right_alt
                                             </span>
-                                            <p className="font-body-md text-body-md text-brand-dark leading-relaxed">
+                                            <p className="font-body-sm text-body-sm text-brand-dark leading-relaxed">
                                                 {step}
                                             </p>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
+                        </div>
+
+                        {/* ── Images column — shows SECOND on mobile, first on desktop ── */}
+                        <div className="order-2 lg:order-1 flex flex-col gap-6">
+                            {displayData.visuals.map((visual, idx) => (
+                                <div key={idx} className="minimal-card p-3 bg-surface-container-low">
+                                    <div className="text-xs uppercase tracking-wider text-brand-accent font-bold mb-2 flex items-center gap-1.5 select-none">
+                                        <span className="material-symbols-outlined text-[16px]">{visual.icon}</span>
+                                        {visual.label}
+                                    </div>
+                                    {/* LazyImage handles skeleton + lazy load + fade-in */}
+                                    <LazyImage
+                                        src={visual.src}
+                                        alt={visual.alt}
+                                        className="rounded border border-brand-border zoomable-image"
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </ScrollReveal>

@@ -43,7 +43,7 @@ const FAQ = () => {
         <div className="max-w-3xl mx-auto flex flex-col gap-4">
           {faqs.map((faq, index) => (
             <ScrollReveal key={index} delay={index * 100}>
-              <div className="minimal-card px-6 py-4 cursor-pointer hover:shadow-md transition-shadow duration-300 transition-all hover:scale-[1.01]" onClick={() => toggleFAQ(index)}>
+              <div className="minimal-card px-6 py-4 cursor-pointer hover:shadow-md transition-shadow duration-300 transition-all hover:scale-[1.02]" onClick={() => toggleFAQ(index)}>
                 <div className="flex justify-between items-center gap-4">
                   <h3 className={`font-headline-sm text-headline-sm transition-colors ${openIndex === index ? 'text-brand-accent' : 'text-brand-dark'}`}>
                     {faq.question}

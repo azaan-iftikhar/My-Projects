@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <footer className="bg-surface text-primary font-body-md text-body-md border-t border-outline-variant w-full bottom-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full px-section-padding-sm lg:px-section-padding-lg py-16 max-w-container-max mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter w-full px-margin-mobile md:px-gutter py-16 max-w-container-max mx-auto">
                 <div className="flex flex-col gap-4">
                     {/* Vendrix Automation logo in footer */}
                     <div className="flex items-center gap-3 mb-1">
@@ -16,7 +16,7 @@ const Footer = () => {
                             <span className="text-[8px] font-semibold tracking-[0.18em] text-secondary uppercase mt-0.5">Automation</span>
                         </div>
                     </div>
-                    <p className="text-secondary mb-4">© 2024 Vendrix Automation. All rights reserved.</p>
+                    <p className="text-secondary mb-4">© 2025 Vendrix Automation. All rights reserved.</p>
                 </div>
                 <div className="flex flex-col gap-3">
                     <span className="font-bold text-on-surface mb-1">Navigation</span>
